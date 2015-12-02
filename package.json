@@ -1,0 +1,23 @@
+{
+  "name": "swolemate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murgia/SwoleMate.git"
+  },
+  "author": "Aurelio, Chrystal, Ly, and Matt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murgia/SwoleMate/issues"
+  },
+  "homepage": "https://github.com/murgia/SwoleMate#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "hbs": "^4.0.0"
+  }
+}
