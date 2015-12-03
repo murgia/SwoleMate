@@ -23,6 +23,8 @@ WorkoutSchema.virtual("id").get(function(){
 var ExerciseSchema = new Schema({
   name: String,
   description: String,
+  sets: Number,
+  reps: Number,
   video_url: String
 });
 
