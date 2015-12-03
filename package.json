@@ -18,6 +18,8 @@
   "homepage": "https://github.com/murgia/SwoleMate#readme",
   "dependencies": {
     "express": "^4.13.3",
-    "hbs": "^4.0.0"
+    "hbs": "^4.0.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.2.9"
   }
 }
