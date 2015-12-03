@@ -1,0 +1,12 @@
+describe "a Workout"
+  it should have a name
+  it should have a button and displays exercises and that button should be able to be clicked to hide
+  the  exercises
+  it should be able to be edited
+
+describe "an Exercise"
+  it should have a name
+  it should have a description
+  it should have a video
+  it should have an edit button
+  it should have a delete button

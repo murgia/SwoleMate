@@ -1,11 +1,11 @@
-var WorkoutModel = require("../models/workout")
-var ExerciseModel = require("../models/exercise")
+var WorkoutModel = require("../models/workout");
+var ExerciseModel = require("../models/exercise");
 
 var workoutsController = {
   index: function(req, res){
     WorkoutModel.find({}, function(err, docs){
       res.render("workouts/index", {workouts: docs})
-    })
+    });
   },
   create: function(req, res){
     // var exercise = new ExerciseModel({name: req.body.name})
