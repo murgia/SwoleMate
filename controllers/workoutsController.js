@@ -9,7 +9,7 @@ var workoutsController = {
   },
   create: function(req, res){
     // var exercise = new ExerciseModel({name: req.body.name})
-  }
+  },
   new: function(req, res){
 
   },
