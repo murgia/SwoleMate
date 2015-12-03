@@ -24,7 +24,9 @@ var ExerciseSchema = new Schema({
   name: String,
   description: String,
   video_url: String,
-  workout:[{type: ObjectId, ref: "Workout"}]
+  workout:[{type: ObjectId, ref: "Workout"}],
+  sets: Number,
+  reps: Number
 });
 
 var WorkoutModel = mongoose.model("Workout", WorkoutSchema);
