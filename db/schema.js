@@ -23,7 +23,8 @@ WorkoutSchema.virtual("id").get(function(){
 var ExerciseSchema = new Schema({
   name: String,
   description: String,
-  video_url: String
+  video_url: String,
+  workout:[{type: ObjectId, ref: "Workout"}]
 });
 
 var WorkoutModel = mongoose.model("Workout", WorkoutSchema);
