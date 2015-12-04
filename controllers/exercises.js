@@ -7,7 +7,7 @@
 //   response.status(500);
 //   response.json({error: message});
 // }
-// 
+//
 // router.get("/", function(req, res){
 //   exercise.find({}).populate("workout", "name").then(function(exercises){
 //     res.json(exercises);
