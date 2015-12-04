@@ -18,6 +18,4 @@ app.listen(3000, function(){
 });
 
 app.get("/workouts", workoutsController.index);
-app.get("/workouts/new", workoutsController.new);
 app.post("/workouts", workoutsController.create);
-app.get("/workouts/:id", workoutsController.show);
