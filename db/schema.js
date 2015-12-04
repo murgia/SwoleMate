@@ -1,5 +1,6 @@
 // requiring mongoose dependency
 var mongoose = require('mongoose');
+mongoose.connect("mongodb://localhost/swolemate");
 
 // instantiate a name space for our Schema constructor defined by mongoose.
 var Schema = mongoose.Schema;
