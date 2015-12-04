@@ -17,7 +17,7 @@ app.listen(3000, function(){
   console.log("Listening on port 3000");
 });
 
-app.get("/workouts", workoutsController.index)
-app.get("/workouts/new", workoutsController.new)
-app.post("/workouts", workoutsController.create)
-app.get("/workouts/:id", workoutsController.show)
+app.get("/workouts", workoutsController.index);
+app.get("/workouts/new", workoutsController.new);
+app.post("/workouts", workoutsController.create);
+app.get("/workouts/:id", workoutsController.show);
