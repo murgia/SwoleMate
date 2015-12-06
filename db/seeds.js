@@ -18,10 +18,10 @@ db.once("open", function(){
   Exercise.remove({}).then(function(){
     Workout.remove({}).then(function(){
       forEach(workoutData, function(workoutDatum){
-        return new Workout(workoutDatum).save().then(function(workouts){
+        return new Workout(workoutDatum).save().then(function(workout){
           return forEach(exerciseData[workout.title], function(exerciseDatum){
             exercise = new Exercise(exerciseDatum);
-            console.log(workout.title + " exercises " + exercise.title);
+            console.log(workout.title + " exercises " + exercise.name);
             exercise.workout = workout;
             return exercise.save().then(function(exercise){
               workout.exercises.push(exercise);
