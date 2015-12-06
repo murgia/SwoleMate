@@ -24,7 +24,7 @@ Workout.prototype = {
       for(var i = 0; i < response.length; i++){
         workout.exercises.push(new Exercise(response[i]));
       }
-    }).fail(function(repsonse){
+    }).fail(function(response){
       console.log("js failed to load");
     });
     return request;

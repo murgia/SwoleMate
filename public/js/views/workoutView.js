@@ -11,8 +11,8 @@ WorkoutView.prototype = {
     self.$el.html(self.workoutTemplate(self.workout));
     var showButton = self.$el.find(".showExercises");
     // var editButton = self.$el.find(".editArtist");
-    var workoutsDiv   = self.$el.find("div.workouts");
-    workoutsDiv.hide();
+    var exercisesDiv   = self.$el.find("div.exercises");
+    exercisesDiv.hide();
     showButton.on("click", function(){
       self.toggleExercises(exercisesDiv);
     });
