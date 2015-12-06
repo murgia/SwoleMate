@@ -9,9 +9,9 @@ function error(response, message){
 }
 
 router.get("/", function(req, res){
-  Workout.find({}.populate("exercises").then(function(workouts){
+  Workout.find({}).populate("exercises").then(function(workouts){
     res.json(workouts);
-  });
+  })
 });
 
 router.get("/:id/exercises", function(req, res){
