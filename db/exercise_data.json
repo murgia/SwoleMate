@@ -1,0 +1,34 @@
+{
+  "Arms": [
+    {
+    "name": "Bicep curl",
+    "description": "Hold dumbbells and have arms by your side. Keep your elbows close to the body. Rotate so palms of hands face forward. Keep elbows in one place and raise weights until dumbbells are at shoulder level.",
+    "sets": 3,
+    "reps": 15,
+    "video_url": "https://www.youtube.com/watch?v=ykJmrZ5v0Oo"
+  },
+    {
+    "name": "Hammer curl",
+    "description": "Hold a dumbbell in each hand with palms facing your sides and arms extended straight down. Keeping your upper arms against your sides, curl both weights at the same time, minimizing momentum used during the curl.",
+    "sets": 3,
+    "reps": 12,
+    "video_url": "https://www.youtube.com/watch?v=zC3nLlEvin4"
+    }
+  ],
+  "Legs" : [
+    {
+    "name": "Regular Dumbbell Squat",
+    "description": "Hold dumbbells at sides with legs medium spaced. Crouch down like you're sitting.",
+    "sets": 3,
+    "reps": 25,
+    "video_url":  "https://www.youtube.com/watch?v=ykJmrZ5v0Oo"
+  },
+    {
+    "name": "Deadlifts",
+    "description": "",
+    "sets": 3,
+    "reps": 20,
+    "video_url":  "https://www.youtube.com/watch?v=RyJbvWAh6ec"
+    }
+  ]
+}
