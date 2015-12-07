@@ -29,11 +29,13 @@ WorkoutView.prototype = {
     self.$el.find(".updateWorkout").on("click", function() {
       self.updateWorkout();
     });
+  },
   //
   //   self.$el.find(".deleteArtist").on("click", function() {
   //     self.artist.destroy().then(function() { self.$el.fadeOut()});
   //   });
   // },
+
   toggleButton: function(exercisesDiv){
     if(exercisesDiv.is(":visible")){
       exercisesDiv.siblings("button.showExercises").text("Hide Exercises");
@@ -41,6 +43,7 @@ WorkoutView.prototype = {
       exercisesDiv.siblings("button.showExercises").text("Show Exercises");
     }
   },
+
   toggleExercises: function(exercisesDiv){
     var self = this;
     if(exercisesDiv.children().length === 0){
