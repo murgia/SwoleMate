@@ -2,7 +2,7 @@ var Workout = function(info) {
   this.title = info.title;
   this.id = info.id;
 };
-Workout.all = []
+Workout.all = [];
 Workout.fetch = function() {
   var url = "http://localhost:3000/workouts";
   var request = $.getJSON(url).then(function(response) {
