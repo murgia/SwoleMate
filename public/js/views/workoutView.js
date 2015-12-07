@@ -77,7 +77,7 @@ WorkoutView.prototype = {
 
   workoutEditTemplate: function(){
     var workout = this.workout;
-    var html = $("div");
+    var html = $("<div class='exercises'>");
     html.append("<input name='name' value ='" + workout.title + "'>");
     html.append("<button class= 'updateWorkout'>Modify Workout<button>");
     html.append("<button class='deleteWorkout'>Obliterate Workout<button>");
