@@ -62,7 +62,7 @@ WorkoutView.prototype = {
   updateWorkout: function() {
     var self = this;
     var data = {
-      title: $('input[title=title]').val()
+      title: $('input[name=title]').val()
     };
       self.workout.update(data).then(function() { self.render(); });
   },
