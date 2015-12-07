@@ -26,4 +26,10 @@ router.get("/:id/exercises", function(req, res){
   });
 });
 
+router.patch("/:id", function(req,res){
+  Workout.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true}).then(function(workout){
+    res.json(workout);
+  });
+});
+
 module.exports = router;
