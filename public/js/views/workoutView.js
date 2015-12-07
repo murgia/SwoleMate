@@ -11,7 +11,7 @@ WorkoutView.prototype = {
     self.$el.html(self.workoutTemplate(self.workout));
     var showButton = self.$el.find(".showExercises");
     // var editButton = self.$el.find(".editArtist");
-    var exercisesDiv   = self.$el.find("div.exercises");
+    var exercisesDiv = self.$el.find("div.exercises");
     exercisesDiv.hide();
     showButton.on("click", function(){
       self.toggleExercises(exercisesDiv);
@@ -63,11 +63,11 @@ WorkoutView.prototype = {
   // },
   workoutTemplate: function(){
     var workout = this.workout;
-    var html = $("<div>");
-    html.append("<h3>" + workout.title + "</h3>");
+    var html = $("<div class='text-center'></div>");
+    html.append("<h2>" + workout.title + "</h2>");
     html.append("<button class='showExercises'>Show Exercises</button>");
     // html.append("<button class='editWorkout'>Edit Artist</button>");
-    html.append("<div class='exercises'></div>");
+    html.append("<div class='exercises row'></div>");
     return(html);
   }
   // ,
