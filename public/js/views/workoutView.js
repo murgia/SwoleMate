@@ -30,10 +30,12 @@ WorkoutView.prototype = {
       self.updateWorkout();
     });
     self.$el.find(".deleteWorkout").on("click", function() {
-      self.workout.destroy().then(function() { self.$el.fadeOut()});
+      self.workout.destroy().then(function(){
+        self.$el.fadeOut();
+      });
     });
   },
-  
+
   toggleButton: function(exercisesDiv){
     if(exercisesDiv.is(":visible")){
       exercisesDiv.siblings("button.showExercises").text("Hide Exercises");
