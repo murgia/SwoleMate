@@ -14,7 +14,11 @@ router.get("/", function(req, res){
   });
 });
 
-
+router.post("/", function(req, res) {
+  new Workout(req.body).save().then(function(artist) {
+    res.json(workout);
+  });
+});
 
 router.get("/:id/exercises", function(req, res){
   Workout.findById(req.params.id).populate("exercises").then(function(workout){
