@@ -28,7 +28,8 @@ WorkoutView.prototype = {
 
     self.$el.find(".updateWorkout").on("click", function() {
       self.updateWorkout();
-    }),
+    });
+  },
   //
   //   self.$el.find(".deleteArtist").on("click", function() {
   //     self.artist.destroy().then(function() { self.$el.fadeOut()});
