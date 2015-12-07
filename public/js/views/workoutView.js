@@ -61,8 +61,10 @@ WorkoutView.prototype = {
 
   updateWorkout: function() {
     var self = this;
-    var data = {  title:     $('input[title=title]').val()};
-    self.workout.update(data).then(function() { self.render(); });
+    var data = {
+      title: $('input[title=title]').val()
+    };
+      self.workout.update(data).then(function() { self.render(); });
   },
 
   workoutTemplate: function(){
@@ -78,7 +80,7 @@ WorkoutView.prototype = {
   workoutEditTemplate: function(){
     var workout = this.workout;
     var html = $("<div class='exercises'>");
-    html.append("<input name='name' value ='" + workout.title + "'>");
+    html.append("<input name='title' value ='" + workout.title + "'>");
     html.append("<button class= 'updateWorkout'>Modify Workout<button>");
     html.append("<button class='deleteWorkout'>Obliterate Workout<button>");
     return(html);
