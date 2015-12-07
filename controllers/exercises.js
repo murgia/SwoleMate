@@ -11,7 +11,7 @@ function error(response, message){
 router.get("/", function(req, res){
   Exercise.find({}).populate("workout", "title").then(function(exercises){
     res.json(exercises);
-  })
+  });
 }); // ends router.get
 
 module.exports = router;
