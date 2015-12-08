@@ -14,9 +14,14 @@ router.get("/", function(req, res){
   });
 });
 
-router.post("/", function(req, res) {
-  new Workout(req.body).save().then(function(artist) {
-    res.json(workout);
+router.post("/workouts", function(req, res) {
+  var workout = new Workout();
+  workout.title = req.body.title;
+
+  workout.save(function(err){
+    if(err)
+      res.send(err);
+    res.json({message: 'Workout created'});
   });
 });
 

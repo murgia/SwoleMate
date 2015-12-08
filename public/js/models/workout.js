@@ -48,6 +48,13 @@ Workout.prototype = {
       var request = $.ajax( {url: url, method: "delete"} );
       return request;
     },
+    create: function(){
+      var url = "http://localhost:3000/workouts/";
+      var request = $.ajax({
+          url: url,
+          method: "post"});
+      return request;
+    },
     reload: function(newData){
       for(var attrtitle in newData) {
         this[attrtitle] = newData[attrtitle];
