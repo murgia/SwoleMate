@@ -11,7 +11,9 @@ WorkoutView.prototype = {
     self.$el.html(self.workoutTemplate(self.workout));
     var showButton = self.$el.find(".showExercises");
     var editButton = self.$el.find(".editWorkout");
-    var addButton = self.$el.find(".addWorkout");
+
+    // Create workout is no longer a button (it's a heading)
+    // var addButton = self.$el.find(".addWorkout");
     var exercisesDiv   = self.$el.find("div.exercises");
     exercisesDiv.hide();
 
@@ -76,11 +78,11 @@ WorkoutView.prototype = {
 
   workoutTemplate: function(){
     var workout = this.workout;
-    var html = $("<div>");
-    html.append("<h3>" + workout.title + "</h3>");
+    var html = $("<div class='text-center'>");
+    html.append("<h2 class='workout-title'>" + workout.title + "</h2>");
     html.append("<button class='showExercises'>Show Exercises</button>");
     html.append("<button class='editWorkout'>Edit Workout</button>");
-    html.append("<div class='exercises'></div>");
+    html.append("<div class='exercises row text-left'></div>");
     return(html);
   },
 
