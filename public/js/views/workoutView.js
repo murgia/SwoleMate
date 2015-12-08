@@ -4,18 +4,16 @@ var WorkoutView = function(workout){
   this.render();
   $(".workouts").append(this.$el);
 };
-// WorkoutView.setCreateButton = function(){
 
-//   var createWorkoutButton = $("#new-workout");
-//   createWorkoutButton.on("click", function(){
-//     // renderNewWorkout();
-//     console.log("testing");
-//     self.workoutNewTemplate();
-//   });
-// }
-//
-// // script.js
-// WorkoutView.setCreateButton();
+WorkoutView.setCreateButton = function(){
+  var self = this;
+  var createWorkoutButton = $("#new-workout");
+  createWorkoutButton.one("click", function(){
+    // renderNewWorkout();
+    console.log("testing");
+    self.prototype.workoutNewTemplate();
+  });
+};
 
 WorkoutView.prototype = {
   render: function(){
