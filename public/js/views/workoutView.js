@@ -13,7 +13,7 @@ WorkoutView.prototype = {
     var editButton = self.$el.find(".editWorkout");
 
     // Create workout is no longer a button (it's a heading)
-    // var addButton = self.$el.find(".addWorkout");
+    var createWorkoutButton = $("#new-workout");
     var exercisesDiv   = self.$el.find("div.exercises");
     exercisesDiv.hide();
 
@@ -25,9 +25,25 @@ WorkoutView.prototype = {
       self.renderEditForm();
     });
 
-    // addButton.on("click", function(){
-    //   renderNewWorkout();
-    // });
+    createWorkoutButton.on("click", function(){
+      // renderNewWorkout();
+      console.log("testing");
+    });
+  },
+
+  renderNewForm:function(){
+    var self = this;
+    workoutNewTemplate();
+    self.$el.find(".newWorkout").on("click", function() {
+      self.createWorkout();
+    });
+  },
+
+  workoutNewTemplate: function(){
+    var html = $(".workouts");
+    html.append("<input name='title' value ='" + workout.title + "'>");
+    html.append("<button class= 'newWorkout'>Create Workout<button>");
+    return(html);
   },
 
   renderEditForm: function() {
