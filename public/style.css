@@ -1,0 +1,142 @@
+/*font-family: lobster-two, cursive; */
+/*font-family: ultra, serif;*/
+/*font-family: stencil-std, sans-serif;*/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:200,700|Raleway:400,500,700);
+
+/*************************************
+MAIN CSS
+**************************************/
+html, head, title, a, body, header, nav, div, ul, li {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/*************************************
+NAV BAR
+**************************************/
+nav {
+  border-bottom: #FCC102;
+}
+
+.navbar-inverse
+.navbar-brand {
+    color: white;
+}
+
+.navbar-inverse
+.navbar-brand:hover {
+    color: #FCC102;
+    font-weight: 900;
+}
+
+/*************************************
+MAIN IMAGE
+**************************************/
+img#main-photo {
+  width: 90%;
+}
+
+/*************************************
+LINKS AND BUTTONS
+**************************************/
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
+
+.navbar-inverse
+.navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse
+.navbar-nav > li > a:hover {
+    color: #FCC102;
+    font-weight: 900;
+}
+
+button.showExercises {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: #46DCF5;
+  box-shadow: 0 0 3px gray;
+  border: 2px solid #f5f5f5;
+  text-align:center;
+}
+
+button.showExercises:hover {
+  background-color: rgb(121, 232, 250);
+}
+
+/* prevents text decoration from being underline when the mouse is clicked and away */
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+/*************************************
+HEADINGS
+**************************************/
+
+h1#new-workout {
+  margin-top: -25px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px gray;
+  font-size: 5.9vw;
+}
+
+h1#new-workout a:link,
+h1#new-workout a:visited {
+  color: #E16800;
+}
+
+h1#new-workout a:hover,
+h1#new-workout a:active {
+  color: red;
+  font-weight: 900;
+}
+
+h2.workout-title {
+  font-size: 5.0vw;
+  font-weight: 900;
+}
+
+h3.exercise-name {
+  font-size: medium;
+  max-width: 16px;
+  font-weight: 900;
+  color: #972102;
+}
+
+p {
+  font-size: small;
+}
+
+/*************************************
+EXERCISE DIV
+**************************************/
+.exercise-div {
+  margin-top: 10px;
+  /*border: #56C0E0 1px solid;*/
+  /*background-color: rgba(42, 172, 247, 0.17);*/
+  background-color: rgba(21, 157, 253, 0.55);
+  box-shadow: 2px 3px 5px #888888;
+  padding: 10px;
+  padding-top: 1px;
+  color: black;
+}
+
+h3.exercise_name_title {
+  font-weight: 700;
+}
