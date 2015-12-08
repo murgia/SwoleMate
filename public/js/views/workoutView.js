@@ -63,11 +63,11 @@ WorkoutView.prototype = {
   // },
   workoutTemplate: function(){
     var workout = this.workout;
-    var html = $("<div class='text-center'></div>");
-    html.append("<h2>" + workout.title + "</h2>");
+    var html = $("<div class='text-center'>");
+    html.append("<h2 class='workout-title'>" + workout.title + "</h2>");
     html.append("<button class='showExercises'>Show Exercises</button>");
     // html.append("<button class='editWorkout'>Edit Artist</button>");
-    html.append("<div class='exercises row'></div>");
+    html.append("<div class='exercises row text-left'></div>");
     return(html);
   }
   // ,

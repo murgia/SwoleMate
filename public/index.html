@@ -8,6 +8,8 @@
     <!-- To ensure proper rendering and touch zooming on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- font below is for create a new workout link -->
+    <script src="//use.edgefonts.net/stencil-std;lobster-two;ultra.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -19,14 +21,13 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-default">
+      <nav class="navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">SwoleMate</a>
+            <a class="navbar-brand" href="/">SwoleMate</a>
           </div>
           <div> <!-- ends navbar-header -->
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
               <li><a href="#">My Workouts</a></li>
               <li><a href="#">Exercises</a></li>
               <li><a href="#">Gym Locator</a></li>
@@ -34,95 +35,17 @@
           </div>
         </div>
       </nav>
-
+    <div class="text-center">
+      <img src="http://gumbofitness.com/wp-content/uploads/2014/11/header-photo1.jpg" style="max-width:90%;">
+    </div>
     </header>
 
     <div class="text-center">
-      <button id=#new_workout>Create New Workout!</button>
+      <h1 id="new-workout"><a href="#">Create a New Workout!</a></h1>
     </div>
 
   <!-- Individual workouts get generated in the div below -->
     <div class="workouts container"></div>
 
-<!-- HTML example -->
-    <!-- <div class="container">
-      <div class="row">
-        <h2>Arms Workout</h2>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Bicep Curls</h3>
-              <p>Exercise Name: Bicep curls</p>
-              <p>
-                Exercise Description: Hold dumbbells and have arms by your side. Keep your elbows close to the body. Rotate so palms of hands face forward. Keep elbows in one place and raise weights until dumbbells are at shoulder level.
-              </p>
-              <p>Sets: 3</p>
-              <p>Reps: 15</p>
-              <p>Video Url: https://www.youtube.com/watch?v=ykJmrZ5v0Oo</p>
-                <a href="#" class="btn btn-default" role="button">Edit Exercise</a>
-                <a href="#" class="btn btn-default" role="button">Delete Exercise</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Bicep Curls</h3>
-              <p>Exercise Name: Bicep curls</p>
-              <p>
-                Exercise Description: Hold dumbbells and have arms by your side. Keep your elbows close to the body. Rotate so palms of hands face forward. Keep elbows in one place and raise weights until dumbbells are at shoulder level.
-              </p>
-              <p>Sets: 3</p>
-              <p>Reps: 15</p>
-              <p>Video Url: https://www.youtube.com/watch?v=ykJmrZ5v0Oo</p>
-                <a href="#" class="btn btn-default" role="button">Edit Exercise</a>
-                <a href="#" class="btn btn-default" role="button">Delete Exercise</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Bicep Curls</h3>
-              <p>Exercise Name: Bicep curls</p>
-              <p>
-                Exercise Description: Hold dumbbells and have arms by your side. Keep your elbows close to the body. Rotate so palms of hands face forward. Keep elbows in one place and raise weights until dumbbells are at shoulder level.
-              </p>
-              <p>Sets: 3</p>
-              <p>Reps: 15</p>
-              <p>Video Url: https://www.youtube.com/watch?v=ykJmrZ5v0Oo</p>
-                <a href="#" class="btn btn-default" role="button">Edit Exercise</a>
-                <a href="#" class="btn btn-default" role="button">Delete Exercise</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3>Bicep Curls</h3>
-              <p>Exercise Name: Bicep curls</p>
-              <p>
-                Exercise Description: Hold dumbbells and have arms by your side. Keep your elbows close to the body. Rotate so palms of hands face forward. Keep elbows in one place and raise weights until dumbbells are at shoulder level.
-              </p>
-              <p>Sets: 3</p>
-              <p>Reps: 15</p>
-              <p>Video Url: https://www.youtube.com/watch?v=ykJmrZ5v0Oo</p>
-                <a href="#" class="btn btn-default" role="button">Edit Exercise</a>
-                <a href="#" class="btn btn-default" role="button">Delete Exercise</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-  </div>
-
-
   </body>
-</html> -->
+</html>
