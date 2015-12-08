@@ -11,6 +11,7 @@ WorkoutView.prototype = {
     self.$el.html(self.workoutTemplate(self.workout));
     var showButton = self.$el.find(".showExercises");
     var editButton = self.$el.find(".editWorkout");
+    var addButton = self.$el.find(".addWorkout");
     var exercisesDiv   = self.$el.find("div.exercises");
     exercisesDiv.hide();
 
@@ -21,7 +22,12 @@ WorkoutView.prototype = {
     editButton.on("click", function(){
       self.renderEditForm();
     });
+
+    addButton.on("click", function(){
+      renderNewWorkout();
+    });
   },
+
   renderEditForm: function() {
     var self = this;
     self.$el.html(self.workoutEditTemplate(self.workout));
@@ -85,5 +91,6 @@ WorkoutView.prototype = {
     html.append("<button class= 'updateWorkout'>Modify Workout<button>");
     html.append("<button class='deleteWorkout'>Obliterate Workout<button>");
     return(html);
-  }
+  },
+
 };

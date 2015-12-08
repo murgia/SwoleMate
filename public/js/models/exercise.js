@@ -6,4 +6,4 @@ var Exercise = function(info){
   this.reps = info.reps;
   this.workoutId = info.workoutId;
   this.id = info.id;
-}
+};
