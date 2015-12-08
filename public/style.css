@@ -42,8 +42,9 @@ nav {
 /*************************************
 MAIN IMAGE
 **************************************/
-img#main-photo {
-  width: 90%;
+img {
+  width: 100%;
+  height: auto;
 }
 
 /*************************************
@@ -139,4 +140,3 @@ EXERCISE DIV
 
 h3.exercise_name_title {
   font-weight: 700;
-}
