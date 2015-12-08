@@ -4,6 +4,18 @@ var WorkoutView = function(workout){
   this.render();
   $(".workouts").append(this.$el);
 };
+// WorkoutView.setCreateButton = function(){
+
+//   var createWorkoutButton = $("#new-workout");
+//   createWorkoutButton.on("click", function(){
+//     // renderNewWorkout();
+//     console.log("testing");
+//     self.workoutNewTemplate();
+//   });
+// }
+//
+// // script.js
+// WorkoutView.setCreateButton();
 
 WorkoutView.prototype = {
   render: function(){
@@ -11,9 +23,6 @@ WorkoutView.prototype = {
     self.$el.html(self.workoutTemplate(self.workout));
     var showButton = self.$el.find(".showExercises");
     var editButton = self.$el.find(".editWorkout");
-
-    // Create workout is no longer a button (it's a heading)
-    var createWorkoutButton = $("#new-workout");
     var exercisesDiv   = self.$el.find("div.exercises");
     exercisesDiv.hide();
 
@@ -24,24 +33,20 @@ WorkoutView.prototype = {
     editButton.on("click", function(){
       self.renderEditForm();
     });
-
-    createWorkoutButton.on("click", function(){
-      // renderNewWorkout();
-      console.log("testing");
-    });
   },
 
-  renderNewForm:function(){
-    var self = this;
-    workoutNewTemplate();
-    self.$el.find(".newWorkout").on("click", function() {
-      self.createWorkout();
-    });
-  },
+  // renderNewForm:function(){
+  //   var self = this;
+  //   self.$el.html(workoutNewTemplate());
+  //   self.$el.find(".newWorkout").on("click", function() {
+  //     self.createWorkout();
+  //   });
+  // },
 
   workoutNewTemplate: function(){
-    var html = $(".workouts");
-    html.append("<input name='title' value ='" + workout.title + "'>");
+    // var workout = this.workout;
+    var html = $("#new-workout");
+    html.append("<input name='title' value = ''>");
     html.append("<button class= 'newWorkout'>Create Workout<button>");
     return(html);
   },
