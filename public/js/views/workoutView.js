@@ -7,12 +7,19 @@ var WorkoutView = function(workout){
 
 WorkoutView.setCreateButton = function(){
   var self = this;
-  var createWorkoutButton = $("#new-workout");
-  createWorkoutButton.one("click", function(){
+  var newWorkoutForm = $("#new-workout");
+  newWorkoutForm.one("click", function(){
     // renderNewWorkout();
     console.log("testing");
     self.prototype.workoutNewTemplate();
   });
+};
+
+// still working on this. need to use a create function as well to save data
+WorkoutView.createWorkout = function(){
+  var self = this;
+  var createWorkoutButton = $(".newWorkout");
+
 };
 
 WorkoutView.prototype = {
