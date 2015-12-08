@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <title>SwoleMate</title>
@@ -20,13 +21,20 @@
     <script src="js/script.js"></script>
   </head>
   <body>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <header>
-      <nav class="navbar-inverse">
+      <nav class="navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="/">SwoleMate</a>
           </div>
           <div>
+          <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
               <li><a href="#">My Workouts</a></li>
               <li><a href="#">Exercises</a></li>
@@ -36,16 +44,19 @@
         </div>
       </nav>
     </header>
-    <div class="text-center container" id=" main-photo">
-      <img src="/images/main-photo.jpg" id="main-photo">
-    </div>
+    <img src="/images/bg-image.jpg">
 
     <div class="text-center">
       <h1 id="new-workout"><a href="#">Create a New Workout!</a></h1>
     </div>
 
+    <div id="workouts" class="container-fluid">
+
+    </div>
+    <div id="exercises" class="container-fluid">
+
   <!-- Individual workouts get generated in the div below -->
     <div class="workouts container"></div>
 
   </body>
-</html>
+  </html>
