@@ -25,9 +25,9 @@ WorkoutView.prototype = {
       self.renderEditForm();
     });
 
-    addButton.on("click", function(){
-      renderNewWorkout();
-    });
+    // addButton.on("click", function(){
+    //   renderNewWorkout();
+    // });
   },
 
   renderEditForm: function() {
