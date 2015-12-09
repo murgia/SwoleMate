@@ -7,17 +7,28 @@ var WorkoutView = function(workout){
 
 WorkoutView.setCreateButton = function(){
   var self = this;
-  var newWorkoutForm = $("#new-workout");
-  newWorkoutForm.one("click", function(){
+  var newWorkout = $("#new-workout");
+  var newWorkoutForm = $(".workout-attachment");
+  newWorkout.one("click", function(){
     // renderNewWorkout();
     console.log("testing");
+    newWorkoutForm.show();
     self.prototype.workoutNewTemplate();
   });
+  newWorkout.on("click", function(){
+    newWorkoutForm.show();
+    console.log("test");
+  });
+  // newWorkout.toggle(function(){
+  //   newWorkoutForm.show();
+  // }, function(){
+  //   newWorkoutForm.hide();
+  // });
 };
 
 WorkoutView.createWorkout = function(){
   var newWorkoutBar = $(".newWorkout");
-  var newWorkoutForm = $("#new-workout");
+  var newWorkoutForm = $(".workout-attachment");
   newWorkoutForm.on("click", ".newWorkout", function(){
     console.log("new testing");
     var data = {
@@ -26,7 +37,7 @@ WorkoutView.createWorkout = function(){
     Workout.create(data).then(function(newWorkOut){
       console.log(newWorkOut);
       new WorkoutView(newWorkOut).render();
-      newWorkoutBar.hide();
+      newWorkoutForm.hide();
     });
   });
 };
@@ -51,7 +62,7 @@ WorkoutView.prototype = {
 
   workoutNewTemplate: function(){
     // var workout = this.workout;
-    var html = $("#new-workout");
+    var html = $(".workout-attachment");
     html.append("<input name='title' value = ''>");
     html.append("<button class= 'newWorkout'>Create Workout<button>");
     return(html);
