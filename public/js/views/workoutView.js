@@ -36,7 +36,7 @@ WorkoutView.prototype = {
     workoutNewTemplate();
     self.$el.find(".newWorkout").on("click", function() {
       self.createWorkout();
-    });
+    }); 
   },
 
   workoutNewTemplate: function(){
