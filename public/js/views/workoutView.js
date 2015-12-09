@@ -5,15 +5,29 @@ var WorkoutView = function(workout){
   $(".workouts").append(this.$el);
 };
 
+WorkoutView.setCreateButton = function(){
+  var self = this;
+  var newWorkoutForm = $("#new-workout");
+  newWorkoutForm.one("click", function(){
+    // renderNewWorkout();
+    console.log("testing");
+    self.prototype.workoutNewTemplate();
+  });
+};
+
+// still working on this. need to use a create function as well to save data
+WorkoutView.createWorkout = function(){
+  var self = this;
+  var createWorkoutButton = $(".newWorkout");
+
+};
+
 WorkoutView.prototype = {
   render: function(){
     var self = this;
     self.$el.html(self.workoutTemplate(self.workout));
     var showButton = self.$el.find(".showExercises");
     var editButton = self.$el.find(".editWorkout");
-
-    // Create workout is no longer a button (it's a heading)
-    // var addButton = self.$el.find(".addWorkout");
     var exercisesDiv   = self.$el.find("div.exercises");
     exercisesDiv.hide();
 
@@ -24,10 +38,22 @@ WorkoutView.prototype = {
     editButton.on("click", function(){
       self.renderEditForm();
     });
+  },
 
-    // addButton.on("click", function(){
-    //   renderNewWorkout();
-    // });
+  // renderNewForm:function(){
+  //   var self = this;
+  //   self.$el.html(workoutNewTemplate());
+  //   self.$el.find(".newWorkout").on("click", function() {
+  //     self.createWorkout();
+  //   });
+  // },
+
+  workoutNewTemplate: function(){
+    // var workout = this.workout;
+    var html = $("#new-workout");
+    html.append("<input name='title' value = ''>");
+    html.append("<button class= 'newWorkout'>Create Workout<button>");
+    return(html);
   },
 
   renderEditForm: function() {
