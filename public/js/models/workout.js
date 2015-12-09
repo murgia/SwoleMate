@@ -52,7 +52,7 @@ Workout.prototype = {
       var url = "http://localhost:3000/workouts/";
       var request = $.ajax({
           url: url,
-          method: "post",
+          method: "POST",
           data: JSON.stringify(workoutData),
           contentType : 'application/json'});
       return request;

@@ -15,11 +15,13 @@ WorkoutView.setCreateButton = function(){
   });
 };
 
-// still working on this. need to use a create function as well to save data
 WorkoutView.createWorkout = function(){
   var self = this;
-  var createWorkoutButton = $(".newWorkout");
-
+  var newWorkoutForm = $("#new-workout");
+  newWorkoutForm.on("click", ".newWorkout", function(){
+    console.log("new testing");
+    self.prototype.createWorkout();
+  });
 };
 
 WorkoutView.prototype = {
@@ -39,14 +41,6 @@ WorkoutView.prototype = {
       self.renderEditForm();
     });
   },
-
-  // renderNewForm:function(){
-  //   var self = this;
-  //   self.$el.html(workoutNewTemplate());
-  //   self.$el.find(".newWorkout").on("click", function() {
-  //     self.createWorkout();
-  //   });
-  // },
 
   workoutNewTemplate: function(){
     // var workout = this.workout;
@@ -101,6 +95,17 @@ WorkoutView.prototype = {
     };
       self.workout.update(data).then(function() { self.render(); });
   },
+
+  // createWorkout: function() {
+  //   var self = this;
+  //   var workout = new Workout(data);
+  //   var data = {
+  //     title: $('input[name=title]').val().then(function(){
+  //       self.render();
+  //     })
+  //   };
+  //     workout.create(data).then(function() { self.render(); });
+  // },
 
   workoutTemplate: function(){
     var workout = this.workout;

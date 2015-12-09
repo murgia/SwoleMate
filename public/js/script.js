@@ -5,5 +5,6 @@ $(document).ready(function(){
       view.render();
     });
   });
+  WorkoutView.createWorkout();
   WorkoutView.setCreateButton();
 });
