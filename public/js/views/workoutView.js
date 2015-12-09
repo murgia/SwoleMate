@@ -21,11 +21,11 @@ WorkoutView.createWorkout = function(){
   newWorkoutForm.on("click", ".newWorkout", function(){
     console.log("new testing");
     var data = {
-      title: $('input[name=title]').val().then(function(){
-        self.render();
-      })
+      title: $('input[name=title]').val()
     };
-    self.prototype.createWorkout();
+    Workout.create(data).then(function(newWorkout){
+      console.log(newWorkout);
+    });
   });
 };
 

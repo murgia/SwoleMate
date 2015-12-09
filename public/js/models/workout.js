@@ -16,7 +16,8 @@ Workout.fetch = function() {
 };
 
 Workout.create = function(workoutData){
-  var url = "http://localhost:3000/workouts/";
+  var self = this;
+  var url = "/workouts";
   var request = $.ajax({
       url: url,
       method: "POST",
