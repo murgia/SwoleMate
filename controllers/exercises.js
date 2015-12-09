@@ -13,5 +13,10 @@ router.get("/", function(req, res){
     res.json(exercises);
   });
 }); // ends router.get
+router.post("/", function(req, res) {
+  Exercise.create(req.body).then(function(exercise){
+    res.json(exercise);
+  });
+});
 
 module.exports = router;
