@@ -7,3 +7,12 @@ var Exercise = function(info){
   this.workoutId = info.workoutId;
   this.id = info.id;
 };
+
+Exercise.prototype = {
+  update: function(exerciseData){
+    var self = this;
+    // ajax method
+  }
+
+
+} // ends Exercise prototype

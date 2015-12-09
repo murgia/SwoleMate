@@ -14,4 +14,8 @@ router.get("/", function(req, res){
   });
 }); // ends router.get
 
+// router.put("/", function(req,res){
+//   Exercise.findById(req.params.id,)
+// })
+
 module.exports = router;

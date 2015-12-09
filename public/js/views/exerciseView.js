@@ -34,7 +34,6 @@ ExerciseView.prototype = {
     // self is THIS exercise view that was clicked on
     console.log("Edit form function called");
     $(self).html(self.exerciseEditTemplate());
-    console.log(self);
     self.$el.find(".updateExercise").on("click", function(){
       self.updateExercise();
     })
@@ -44,32 +43,31 @@ ExerciseView.prototype = {
     self = this;
     console.log("exerciseEditTemplate rendered")
     var exercise = self.exercise;
-    console.log(exercise);
     var $exerciseTemplateDiv =
     $("<div class='exerciseTemplateDiv'></div>");
     self.$el.append($exerciseTemplateDiv);
 
     var $form =
-    $("<form style='margin-top: 10px;' role='form'>\
+    $("<form style='margin-top: 10px;' role='form' method='post' action=''>\
     <div class='form-group'>\
       <label for='exercise-name'>Exercise Name:</label>\
-      <input class='form-control' name='name' placeholder='" + exercise.name + "'>\
+      <input class='form-control' name='name' value='" + exercise.name + "'>\
     </div>\
     <div class='form-group'>\
       <label for='exercise-description'>Exercise Description: </label>\
-      <textarea class='form-control' rows='5' name='description' placeholder='" + exercise.description + "'></textarea>\
+      <textarea class='form-control' rows='5' name='description'>" + exercise.description + "</textarea>\
     </div>\
     <div class='form-group'>\
     <label for='exercise-video_url'>Exercise Video Demo: </label>\
-      <input class='form-control' name='video_url' placeholder='" + exercise.video_url + "'>\
+      <input class='form-control' name='video_url' value='" + exercise.video_url + "'>\
     </div>\
     <div class='form-group'>\
       <label for='sets'>Sets </label>\
-      <input class='form-control' name='sets' placeholder='" + exercise.sets + "'>\
+      <input class='form-control' name='sets' value='" + exercise.sets + "'>\
     </div>\
     <div class='form-group'>\
       <label for='reps'>Reps: </label>\
-      <input class='form-control' name='reps' placeholder='" + exercise.reps + "'>\
+      <input class='form-control' name='reps' value='" + exercise.reps + "'>\
     </div>\
     <button type='submit' class='btn btn-default updateExercise'>Update Exercise</button>\
     </form>");
@@ -77,11 +75,13 @@ ExerciseView.prototype = {
   },
 
   updateExercise: function() {
-    var self = this;
     var data = {
       name: $('input[name=name]').val(),
-      description: $('input[name=name]').val(),
+      description: $('input[name=description]').val(),
+      video_url: $('input[name=video_url]').val(),
+      sets: $('input[name=sets]').val(),
+      reps: $('input[name=reps]').val()
     };
-      self.workout.update(data).then(function() { self.render(); });
+      this.exercise.update(data);
   }
 }
