@@ -9,6 +9,7 @@ var cookieParser = require('cookie-parser');
 var path         = require("path");
 var bodyParser   = require("body-parser");
 var session      = require('express-session');
+var router       = require('./config/routes')
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 
 // create routes
 app.get("/", function(req, res) {
@@ -47,6 +49,8 @@ app.use(function(req, res, next) {
 });
 
 require('./config/passport')(passport);
+
+app.use("/", router)
 
 app.listen(3000, function() {
   console.log("Listening on port 3000");
