@@ -41,11 +41,37 @@ ExerciseView.prototype = {
     console.log("exerciseEditTemplate called")
     var exercise = this.exercise;
     console.log(exercise);
+    var $exerciseTemplateDiv =
+    $("<div class='exerciseTemplateDiv'></div>");
+    self.$el.append($exerciseTemplateDiv);
 
-    var $form = $("<form><input value'hi'></form>")
-    self.$el.append($form);
-    // var exerciseEditTemplate = $("<div>");
-    // exerciseEditTemplate.html("<form><input name='name' value ='" + exercise.name + "'></form><button class= 'updateWorkout'>Modify Workout<button><button class='deleteWorkout'>Obliterate Workout<button>");
+    var $form =
+    $("<form role='form'>\
+    <div class='form-group'>\
+      <label for='exercise-name'>Exercise Name:</label>\
+      <input class='form-control' name='name' placeholder='" + exercise.name + "'>\
+    </div>\
+    <div class='form-group'>\
+      <label for='exercise-description'>Exercise Description: </label>\
+      <textarea class='form-control' rows='5' name='description' placeholder='" + exercise.description + "'></textarea>\
+    </div>\
+    <div class='form-group'>\
+    <label for='exercise-video_url'>Exercise Video Demo: </label>\
+      <input class='form-control' name='video_url' placeholder='" + exercise.video_url + "'>\
+    </div>\
+    <div class='form-group'>\
+      <label for='sets'>Sets </label>\
+      <input class='form-control' name='sets' placeholder='" + exercise.sets + "'>\
+    </div>\
+    <div class='form-group'>\
+      <label for='reps'>Reps: </label>\
+      <input class='form-control' name='reps' placeholder='" + exercise.reps + "'>\
+    </div>\
+    </form>")
+    self.$el.find($exerciseTemplateDiv).html($form);
+
+    // exerciseEditTemplate.html("<form><input name='name'
+    // value ='" + exercise.name + "'></form><button class= 'updateWorkout'>Modify Workout<button><button class='deleteWorkout'>Obliterate Workout<button>");
     // return exerciseEditTemplate;
   }
 }
