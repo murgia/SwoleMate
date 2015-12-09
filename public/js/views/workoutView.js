@@ -129,6 +129,6 @@ WorkoutView.prototype = {
     html.append("<button class= 'updateWorkout'>Modify Workout<button>");
     html.append("<button class='deleteWorkout'>Obliterate Workout<button>");
     return(html);
-  },
+  }
 
 };

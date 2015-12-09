@@ -6,7 +6,7 @@ ExerciseView.prototype = {
   // renders the exercise view as a bootstrap
   render: function(){
     var self = this;
-    var el =
+    var $el =
     $("<div class='col-sm-6 col-md-4'>\
     <div class='caption exercise-div card-title'>\
     <div class='card-header'>\
@@ -21,14 +21,31 @@ ExerciseView.prototype = {
     <input type='checkbox'>\
     </div>\
     </div>");
-    console.log(self);
-    return(el);
-    var editButton = self.find("button.editExercise");
-    editButton.on("click", function(){
-      console.log("Edit form will be rendered")
-    //   self.renderEditForm();
-    });
+    $el.find(".editExercise").on("click", function(){
+      console.log("Edit Exercise button clicked");
+      self.renderEditForm();
+    })
+    self.$el = $el;
+    return $el;
+  },
 
+  renderEditForm: function(){
+    var self = this;
+    // self is THIS exercise view that was clicked on
+    console.log("Edit form function called");
+    $(self).html(self.exerciseEditTemplate());
+  },
 
+  exerciseEditTemplate: function(){
+    self = this;
+    console.log("exerciseEditTemplate called")
+    var exercise = this.exercise;
+    console.log(exercise);
+
+    var $form = $("<form><input value'hi'></form>")
+    self.$el.append($form);
+    // var exerciseEditTemplate = $("<div>");
+    // exerciseEditTemplate.html("<form><input name='name' value ='" + exercise.name + "'></form><button class= 'updateWorkout'>Modify Workout<button><button class='deleteWorkout'>Obliterate Workout<button>");
+    // return exerciseEditTemplate;
   }
 }
