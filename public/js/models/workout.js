@@ -15,6 +15,20 @@ Workout.fetch = function() {
   return request;
 };
 
+Workout.create = function(workoutData){
+  var url = "http://localhost:3000/workouts/";
+  var request = $.ajax({
+      url: url,
+      method: "POST",
+      data: JSON.stringify(workoutData),
+      contentType : 'application/json'
+    })
+    .then(function(workoutData){
+      return new Workout(workoutData);
+    });
+    return request;
+  };
+
 Workout.prototype = {
   fetchExercises: function() {
       var workout = this;
