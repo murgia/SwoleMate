@@ -16,7 +16,7 @@ WorkoutView.setCreateButton = function(){
 };
 
 WorkoutView.createWorkout = function(){
-  var self = this;
+  var newWorkoutBar = $(".newWorkout");
   var newWorkoutForm = $("#new-workout");
   newWorkoutForm.on("click", ".newWorkout", function(){
     console.log("new testing");
@@ -25,20 +25,11 @@ WorkoutView.createWorkout = function(){
     };
     Workout.create(data).then(function(newWorkOut){
       console.log(newWorkOut);
-    }).then(function(newWorkOut) { self.prototype.render(); });
+      new WorkoutView(newWorkOut).render();
+      newWorkoutBar.hide();
+    });
   });
 };
-
-// createWorkout: function() {
-//   var self = this;
-//   var workout = new Workout(data);
-//   var data = {
-//     title: $('input[name=title]').val().then(function(){
-//       self.render();
-//     })
-//   };
-//     workout.create(data).then(function() { self.render(); });
-// },
 
 WorkoutView.prototype = {
   render: function(){
