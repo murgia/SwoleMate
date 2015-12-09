@@ -34,19 +34,23 @@ ExerciseView.prototype = {
     // self is THIS exercise view that was clicked on
     console.log("Edit form function called");
     $(self).html(self.exerciseEditTemplate());
+    console.log(self);
+    self.$el.find(".updateExercise").on("click", function(){
+      self.updateExercise();
+    })
   },
 
   exerciseEditTemplate: function(){
     self = this;
-    console.log("exerciseEditTemplate called")
-    var exercise = this.exercise;
+    console.log("exerciseEditTemplate rendered")
+    var exercise = self.exercise;
     console.log(exercise);
     var $exerciseTemplateDiv =
     $("<div class='exerciseTemplateDiv'></div>");
     self.$el.append($exerciseTemplateDiv);
 
     var $form =
-    $("<form role='form'>\
+    $("<form style='margin-top: 10px;' role='form'>\
     <div class='form-group'>\
       <label for='exercise-name'>Exercise Name:</label>\
       <input class='form-control' name='name' placeholder='" + exercise.name + "'>\
@@ -67,11 +71,17 @@ ExerciseView.prototype = {
       <label for='reps'>Reps: </label>\
       <input class='form-control' name='reps' placeholder='" + exercise.reps + "'>\
     </div>\
-    </form>")
+    <button type='submit' class='btn btn-default updateExercise'>Update Exercise</button>\
+    </form>");
     self.$el.find($exerciseTemplateDiv).html($form);
+  },
 
-    // exerciseEditTemplate.html("<form><input name='name'
-    // value ='" + exercise.name + "'></form><button class= 'updateWorkout'>Modify Workout<button><button class='deleteWorkout'>Obliterate Workout<button>");
-    // return exerciseEditTemplate;
+  updateExercise: function() {
+    var self = this;
+    var data = {
+      name: $('input[name=name]').val(),
+      description: $('input[name=name]').val(),
+    };
+      self.workout.update(data).then(function() { self.render(); });
   }
 }
