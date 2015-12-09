@@ -23,9 +23,9 @@ WorkoutView.createWorkout = function(){
     var data = {
       title: $('input[name=title]').val()
     };
-    Workout.create(data).then(function(newWorkout){
-      console.log(newWorkout);
-    });
+    Workout.create(data).then(function(newWorkOut){
+      console.log(newWorkOut);
+    }).then(function(newWorkOut) { self.prototype.render(); });
   });
 };
 

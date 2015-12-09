@@ -14,7 +14,7 @@ router.get("/", function(req, res){
   });
 });
 
-router.post("/workouts", function(req, res) {
+router.post("/", function(req, res) {
   Workout.create(req.body).then(function(workout){
     res.json(workout);
   });
