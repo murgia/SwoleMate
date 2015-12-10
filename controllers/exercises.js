@@ -24,6 +24,13 @@ router.delete("/:id", function(req, res){
   Workout.findByIdAndRemove(req.params.id).then(function(){
     res.json({success: true});
   });
+}); // ends router.get
+
+router.post("/", function(req, res) {
+  Exercise.create(req.body).then(function(exercise){
+    res.json(exercise);
+  });
 });
+
 
 module.exports = router;
