@@ -100,6 +100,35 @@ ExerciseView.prototype = {
     self.$el.find($exerciseTemplateDiv).html($form);
   },
 
+  exerciseNewTemplate: function(){
+    var html = $(".workout-attachment");
+    var $form =
+    $("<form style='margin-top: 10px;' role='form'>\
+    <div class='form-group'>\
+    <label for='exercise-name'>Exercise Name:</label>\
+    <input class='form-control' name='name' value='" + exercise.name + "'>\
+    </div>\
+    <div class='form-group'>\
+    <label for='exercise-description'>Exercise Description: </label>\
+    <textarea class='form-control' rows='5' name='description'>" + exercise.description + "</textarea>\
+    </div>\
+    <div class='form-group'>\
+    <label for='exercise-video_url'>Exercise Video Demo: </label>\
+    <input class='form-control' name='video_url' value='" + exercise.video_url + "'>\
+    </div>\
+    <div class='form-group'>\
+    <label for='sets'>Sets </label>\
+    <input class='form-control' name='sets' value='" + exercise.sets + "'>\
+    </div>\
+    <div class='form-group'>\
+    <label for='reps'>Reps: </label>\
+    <input class='form-control' name='reps' value='" + exercise.reps + "'>\
+    </div>\
+    <button type='submit' class='btn btn-default updateExercise'>Update Exercise</button>\
+    </form>");
+    return(html);
+  },
+
   updateExercise: function() {
     var data = {
       name: $('input[name=name]').val(),

@@ -75,28 +75,35 @@ a, a:hover, a:visited, a:active {
     font-weight: 900;
 }
 
-button.showExercises {
+button.showExercises,
+button.newExercise,
+button.editWorkout {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  background-color: #46DCF5;
   box-shadow: 0 0 3px gray;
   border: 2px solid #f5f5f5;
   text-align:center;
+}
+
+button.showExercises {
+  background-color: #46DCF5;
 }
 
 button.showExercises:hover {
   background-color: rgb(121, 232, 250);
 }
 
+button.newExercise {
+  background-color: #EDBF3C;
+}
+
+button.newExercise:hover {
+  background-color: #F6D26B;
+}
+
 button.editWorkout {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
   background-color: #AAF765;
-  box-shadow: 0 0 3px gray;
-  border: 2px solid #f5f5f5;
-  text-align:center;
 }
 
 button.editWorkout:hover {
