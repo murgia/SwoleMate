@@ -30,6 +30,10 @@ router.delete("/:id", function(req, res){
 
 router.post("/", function(req, res) {
   Exercise.create(req.body).then(function(exercise){
+    Workout.find(exercise.workout).then(function(workout) {
+      workout.exercises.push(exercise);
+      workout.save();
+    })
     res.json(exercise);
   });
 });
