@@ -10,15 +10,13 @@ var cookieParser = require('cookie-parser');
 var path         = require("path");
 var bodyParser   = require("body-parser");
 var session      = require('express-session');
-var router       = require('./config/routes')
+var router       = require('./config/routes');
 
 var mongodbUri = 'mongodb://localhost/swolemate';
-mongoose.connect(process.env.MONGOLAB_URI ||mongodbUri)
+mongoose.connect(process.env.MONGOLAB_URI ||mongodbUri);
 
 app.use(morgan('dev'));
 app.use(cookieParser());
-
->>>>>>> aureliooo
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.set('view engine', 'hbs');
@@ -59,7 +57,7 @@ require('./config/passport')(passport);
 var routes = require('./config/routes');
 app.use(routes);
 
-app.use("/", router)
+app.use("/", router);
 
 app.listen(3000, function() {
   console.log("Listening on port 3000");
