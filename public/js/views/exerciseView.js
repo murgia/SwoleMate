@@ -5,8 +5,8 @@ var ExerciseView = function(exercise){
 
 ExerciseView.setCreateButton = function(){
   var self = this;
-  var newExercise = $(".newExercise")
-  var newExerciseForm = $(".workout-attachment")
+  var newExercise = $(".newExercise");
+  var newExerciseForm = $(".workout-attachment");
   newExercise.one("click", function(){
     console.log("testing");
     newExerciseForm.show();
@@ -27,9 +27,9 @@ ExerciseView.createExercise = function(){
     Exercise.create(data).then(function(newExercise){
       new ExerciseView(newExercise).render();
       newExerciseForm.hide();
-    })
-  })
-}
+    });
+  });
+};
 
 ExerciseView.prototype = {
   // renders the exercise view as a bootstrap
