@@ -7,7 +7,7 @@
 /*************************************
 MAIN CSS
 **************************************/
-html, head, title, a, body, header, nav, div, ul, li {
+html, head, title, a, body, header, nav, div, ul, li, h1, h2, h3 {
   border: 0;
   padding: 0;
   margin: 0;
@@ -94,8 +94,15 @@ button.editWorkout:hover {
 }
 
 button {
-  margin: 0px 10px;
+  margin: 2px 2px;
   font-size: medium;
+}
+
+div#buttons_div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; 
 }
 
 /* prevents text decoration from being underline when the mouse is clicked and away */
@@ -141,6 +148,15 @@ h3.exercise-name {
 
 p {
   font-size: small;
+}
+
+h3.exercise-name {
+  display: inline;
+}
+
+button.editExercise,
+button.deleteExercise {
+  display: inline;
 }
 
 /*************************************

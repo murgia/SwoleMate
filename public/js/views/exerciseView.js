@@ -11,14 +11,17 @@ ExerciseView.prototype = {
     <div class='caption exercise-div card-title'>\
     <div class='card-header'>\
     <h3 class='exercise-name'>" + this.exercise.name + "</h3>\
+    <input type='checkbox'>\
     </div>\
     <p><strong>Exercise Description:</strong> " + this.exercise.description + "</p>\
     <p><strong>Sets:</strong> " + this.exercise.sets + "</p>\
     <p><strong>Reps: </strong>" + this.exercise.reps + "</p>\
     <p><strong>Video Url: </strong>" + this.exercise.video_url + "</p>\
-    <button class='btn btn-default editExercise'>Edit Exercise</button>\
-    <a href='#' class='btn btn-default' role='button'>Delete Exercise</a>\
-    <input type='checkbox'>\
+    <embed width='100%' src='" + this.exercise.video_url + "'>\
+    <div id='buttons_div'>\
+      <button class='btn btn-default editExercise'>Edit Exercise</button>\
+      <button class='btn btn-default deleteExercise'>Delete Exercise</button>\
+    </div>\
     </div>\
     </div>");
     $el.find(".editExercise").one("click", function(){
@@ -28,6 +31,8 @@ ExerciseView.prototype = {
     self.$el = $el;
     return $el;
   },
+
+    // <iframe max-width='100%' src='" + this.exercise.video_url + "'frameborder='0' allowfullscreen></iframe>\
 
   renderEditForm: function(){
     var self = this;
