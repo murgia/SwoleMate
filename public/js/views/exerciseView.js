@@ -1,5 +1,6 @@
 var ExerciseView = function(exercise){
   this.exercise = exercise;
+  this.$el = $("<div class=''></div>");
 };
 
 ExerciseView.prototype = {
@@ -29,8 +30,10 @@ ExerciseView.prototype = {
       self.renderEditForm();
       $("form").show();
     });
+    console.log("before", self.$el);
     self.$el = $el;
-    return $el;
+    console.log("after", self.$el);
+    // return $el;
   },
 
     // <iframe max-width='100%' src='" + this.exercise.video_url + "'frameborder='0' allowfullscreen></iframe>\

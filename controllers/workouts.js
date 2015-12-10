@@ -19,14 +19,6 @@ router.post("/", function(req, res) {
     res.json(workout);
   });
 });
-  // var workout = new Workout();
-  // workout.title = req.body.title;
-  //
-  // workout.save(function(err){
-  //   if(err)
-  //     res.send(err);
-  //   res.json({message: 'Workout created'});
-  // });
 
 router.get("/:id/exercises", function(req, res){
   Workout.findById(req.params.id).populate("exercises").then(function(workout){

@@ -25,7 +25,12 @@ Exercise.prototype = {
   reload: function(newData){
     for(var attrtitle in newData) {
       this[attrtitle] = newData[attrtitle];
-    };
+    }
+  },
+  destroy: function(){
+    var url = "http://localhost:3000/exercies/" + this.id;
+    var request = $.ajax({url:  url, method: "delete"});
+    return request;
   }
 
-} // ends Exercise prototype
+}; // ends Exercise prototype
