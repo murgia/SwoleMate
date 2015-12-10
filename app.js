@@ -3,12 +3,13 @@ var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
+var morgan = require("morgan");
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
-
+app.use(morgan("dev"));
 // create routes
 app.get("/", function(req, res){
   res.render("index.html");

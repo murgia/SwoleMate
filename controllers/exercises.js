@@ -12,10 +12,12 @@ router.get("/", function(req, res){
   Exercise.find({}).populate("workout", "title").then(function(exercises){
     res.json(exercises);
   });
-}); // ends router.get
+});
 
-// router.put("/", function(req,res){
-//   Exercise.findById(req.params.id,)
-// })
+router.patch("/:id", function(req, res){
+  Exercise.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true}).then(function(exercise){
+    res.json(exercise);
+  })
+});
 
 module.exports = router;

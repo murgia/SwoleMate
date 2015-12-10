@@ -48,7 +48,7 @@ ExerciseView.prototype = {
     self.$el.append($exerciseTemplateDiv);
 
     var $form =
-    $("<form style='margin-top: 10px;' role='form' method='post' action=''>\
+    $("<form style='margin-top: 10px;' role='form'>\
     <div class='form-group'>\
       <label for='exercise-name'>Exercise Name:</label>\
       <input class='form-control' name='name' value='" + exercise.name + "'>\
@@ -82,6 +82,7 @@ ExerciseView.prototype = {
       sets: $('input[name=sets]').val(),
       reps: $('input[name=reps]').val()
     };
-      this.exercise.update(data);
+      this.exercise.update(data).then(function() { self.render();
+      });
   }
 }
