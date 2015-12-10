@@ -1,6 +1,6 @@
 var ExerciseView = function(exercise){
   this.exercise = exercise;
-}
+};
 
 ExerciseView.prototype = {
   // renders the exercise view as a bootstrap
@@ -36,12 +36,13 @@ ExerciseView.prototype = {
     $(self).html(self.exerciseEditTemplate());
     self.$el.find(".updateExercise").on("click", function(){
       self.updateExercise();
-    })
+      console.log("update test");
+    });
   },
 
   exerciseEditTemplate: function(){
     self = this;
-    console.log("exerciseEditTemplate rendered")
+    console.log("exerciseEditTemplate rendered");
     var exercise = self.exercise;
     var $exerciseTemplateDiv =
     $("<div class='exerciseTemplateDiv'></div>");
@@ -86,4 +87,4 @@ ExerciseView.prototype = {
     this.exercise.update(data).then(function() { self.render();
     });
   }
-}
+};
