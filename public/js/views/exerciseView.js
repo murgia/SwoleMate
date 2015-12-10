@@ -5,14 +5,31 @@ var ExerciseView = function(exercise){
 
 ExerciseView.setCreateButton = function(){
   var self = this;
-  var newExercise = $("#newExercise")
+  var newExercise = $(".newExercise")
   var newExerciseForm = $(".workout-attachment")
   newExercise.one("click", function(){
     console.log("testing");
     newExerciseForm.show();
     self.prototype.exerciseNewTemplate();
   });
+  newExercise.on("click", function(){
+    newExerciseForm.show();
+  });
 };
+
+ExerciseView.createExercise = function(){
+  var newExerciseBar = $(".newExercise");
+  var newExerciseForm = $(".workout-attachment");
+  newExerciseForm.on("click", ".newExercise", function(){
+    var data = {
+
+    };
+    Exercise.create(data).then(function(newExercise){
+      new ExerciseView(newExercise).render();
+      newExerciseForm.hide();
+    })
+  })
+}
 
 ExerciseView.prototype = {
   // renders the exercise view as a bootstrap
