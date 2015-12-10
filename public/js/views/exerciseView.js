@@ -43,8 +43,8 @@ ExerciseView.prototype = {
     // self is THIS exercise view that was clicked on
     console.log("Edit form function called");
     $(self).html(self.exerciseEditTemplate());
-    self.$el.find(".updateExercise").on("click", function(evt){
-      evt.preventDefault();
+    self.$el.find(".updateExercise").on("click", function(){
+      // evt.preventDefault();
       self.updateExercise();
       console.log("update test");
     });
