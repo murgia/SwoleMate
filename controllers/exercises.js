@@ -21,8 +21,9 @@ router.patch("/:id", function(req, res){
 });
 
 router.delete("/:id", function(req, res){
-  Workout.findByIdAndRemove(req.params.id).then(function(){
+  Exercise.findByIdAndRemove(req.params.id).then(function(){
     res.json({success: true});
+    console.log("delete test");
   });
 }); // ends router.get
 

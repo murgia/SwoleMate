@@ -3,7 +3,6 @@ var mongoose = require("mongoose");
 var db = mongoose.connection;
 var workoutData = require("./workout_data");
 var exerciseData = require("./exercise_data");
-
 db.on("error", function(err){
   console.log("Oops! Mongo threw an error. Is `mongod` running?");
   console.log(err.message);
@@ -18,7 +17,9 @@ db.once("open", function(){
   Exercise.remove({}).then(function(){
     Workout.remove({}).then(function(){
       forEach(workoutData, function(workoutDatum){
+        console.log("seeding");
         return new Workout(workoutDatum).save().then(function(workout){
+          console.log(workout);
           return forEach(exerciseData[workout.title], function(exerciseDatum){
             exercise = new Exercise(exerciseDatum);
             console.log(workout.title + " exercises " + exercise.name);
