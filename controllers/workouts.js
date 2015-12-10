@@ -28,7 +28,6 @@ router.post("/", function(req, res) {
   //   res.json({message: 'Workout created'});
   // });
 
-
 router.get("/:id/exercises", function(req, res){
   Workout.findById(req.params.id).populate("exercises").then(function(workout){
     res.json(workout.exercises);
