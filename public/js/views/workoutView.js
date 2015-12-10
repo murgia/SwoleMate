@@ -120,6 +120,7 @@ WorkoutView.prototype = {
     var html = $("<div class='text-center'>");
     html.append("<h2 class='workout-title'>" + workout.title + "</h2>");
     html.append("<button class='showExercises'>Show Exercises</button>");
+    html.append("<button class='newExercise'>Add Exercise</button>");
     html.append("<button class='editWorkout'>Edit Workout</button>");
     html.append("<div class='exercises row text-left'></div>");
     return(html);
