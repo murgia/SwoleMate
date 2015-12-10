@@ -30,9 +30,15 @@ ExerciseView.prototype = {
       self.renderEditForm();
       $("form").show();
     });
-    console.log("before", self.$el);
+    $el.find(".deleteExercise").on("click", function(){
+      console.log("delete button was clicked");
+      self.exercise.destroy().then(function(){
+        self.$el.fadeOut();
+    });
+  });
+    // console.log("before", self.$el);
     self.$el = $el;
-    console.log("after", self.$el);
+    // console.log("after", self.$el);
     // return $el;
   },
 
