@@ -10,7 +10,7 @@ ExerciseView.prototype = {
     $("<div class='col-sm-6 col-md-4'>\
     <div class='caption exercise-div card-title'>\
     <div class='card-header'>\
-      <h3 class='exercise-name'>" + this.exercise.name + "</h3>\
+    <h3 class='exercise-name'>" + this.exercise.name + "</h3>\
     </div>\
     <p><strong>Exercise Description:</strong> " + this.exercise.description + "</p>\
     <p><strong>Sets:</strong> " + this.exercise.sets + "</p>\
@@ -21,10 +21,10 @@ ExerciseView.prototype = {
     <input type='checkbox'>\
     </div>\
     </div>");
-    $el.find(".editExercise").on("click", function(){
+    $el.find(".editExercise").one("click", function(){
       console.log("Edit Exercise button clicked");
       self.renderEditForm();
-    })
+    });
     self.$el = $el;
     return $el;
   },
@@ -48,29 +48,30 @@ ExerciseView.prototype = {
     self.$el.append($exerciseTemplateDiv);
 
     var $form =
-    $("<form style='margin-top: 10px;' role='form'>\
-    <div class='form-group'>\
+      $("<form style='margin-top: 10px;' role='form'>\
+      <div class='form-group'>\
       <label for='exercise-name'>Exercise Name:</label>\
       <input class='form-control' name='name' value='" + exercise.name + "'>\
-    </div>\
-    <div class='form-group'>\
+      </div>\
+      <div class='form-group'>\
       <label for='exercise-description'>Exercise Description: </label>\
       <textarea class='form-control' rows='5' name='description'>" + exercise.description + "</textarea>\
-    </div>\
-    <div class='form-group'>\
-    <label for='exercise-video_url'>Exercise Video Demo: </label>\
+      </div>\
+      <div class='form-group'>\
+      <label for='exercise-video_url'>Exercise Video Demo: </label>\
       <input class='form-control' name='video_url' value='" + exercise.video_url + "'>\
-    </div>\
-    <div class='form-group'>\
+      </div>\
+      <div class='form-group'>\
       <label for='sets'>Sets </label>\
       <input class='form-control' name='sets' value='" + exercise.sets + "'>\
-    </div>\
-    <div class='form-group'>\
+      </div>\
+      <div class='form-group'>\
       <label for='reps'>Reps: </label>\
       <input class='form-control' name='reps' value='" + exercise.reps + "'>\
-    </div>\
-    <button type='submit' class='btn btn-default updateExercise'>Update Exercise</button>\
-    </form>");
+      </div>\
+      <button type='submit' class='btn btn-default updateExercise'>Update Exercise</button>\
+      </form>");
+
     self.$el.find($exerciseTemplateDiv).html($form);
   },
 
@@ -82,7 +83,7 @@ ExerciseView.prototype = {
       sets: $('input[name=sets]').val(),
       reps: $('input[name=reps]').val()
     };
-      this.exercise.update(data).then(function() { self.render();
-      });
+    this.exercise.update(data).then(function() { self.render();
+    });
   }
 }
