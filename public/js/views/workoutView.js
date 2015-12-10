@@ -102,7 +102,8 @@ WorkoutView.prototype = {
   appendExercises: function(exercises, exercisesDiv){
     exercises.forEach(function(exercise){
       var exerciseView = new ExerciseView(exercise);
-      exercisesDiv.append(exerciseView.render());
+      exerciseView.render();
+      exercisesDiv.append(exerciseView.$el);
     });
   },
 

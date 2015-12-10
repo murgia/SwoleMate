@@ -22,7 +22,7 @@
   <body>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <header>
-      <nav class="navbar-inverse">
+      <nav class="navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -37,7 +37,7 @@
             <ul class="nav navbar-nav">
               <li><a href="#workouts">My Workouts</a></li>
               <li><a href="#exercises">Exercises</a></li>
-              <li><a href="#weather">Get Weather</a></li>
+              <li><a href="#gymlocator">Gym Locator</a></li>
               <li><a href="/login">Login</a></li>
               <li><a href="/signup">Signup</a></li>
               <li><a href="/logout">Logout</a></li>
@@ -53,35 +53,12 @@
 
     <div class="text-center">
       <h1 id="new-workout">Create a New Workout!</h1>
-      <div class="workout-attachment"></div>
     </div>
 
     <div id="exercises" class="container-fluid">
 
   <!-- Individual workouts get generated in the div below -->
     <div class="workouts container"></div>
-
-    <h4 id="work-outside" class="text-center">Do you want to do your workout <span>outside</span>?</h4>
-
-    <div class="weather-pic">
-      <img src="http://images.clipartpanda.com/weather-clipart-weather-clip-art-15.jpg" id="weather-img">
-    </div>
-
-    <p id="weather">Input your city and state below in order to get up-to-date weather information for your area!</p>
-
-    <form class="form-inline text-center" id="weather">
-      <div class="form-group">
-        <label for="state">State</label>
-        <input type="text" class="form-control" id="state" placeholder="Maryland">
-      </div>
-      <div class="form-group">
-        <label for="city">City</label>
-        <input type="text" class="form-control" id="city" placeholder="Silver Spring">
-      </div>
-      <button type="submit" class="btn btn-default" id="check-weather">Check weather</button>
-    </form>
-
-    <div id="weather"></div>
 
   </body>
   </html>
