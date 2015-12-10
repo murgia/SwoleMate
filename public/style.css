@@ -102,7 +102,7 @@ div#buttons_div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around; 
+  justify-content: space-around;
 }
 
 /* prevents text decoration from being underline when the mouse is clicked and away */
@@ -123,13 +123,11 @@ h1#new-workout {
   font-size: 5.9vw;
 }
 
-h1#new-workout a:link,
-h1#new-workout a:visited {
+h1#new-workout {
   color: #E16800;
 }
 
-h1#new-workout a:hover,
-h1#new-workout a:active {
+h1#new-workout:hover {
   color: red;
   font-weight: 900;
 }
@@ -175,3 +173,4 @@ EXERCISE DIV
 
 h3.exercise_name_title {
   font-weight: 700;
+}
