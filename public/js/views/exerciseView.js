@@ -24,9 +24,10 @@ ExerciseView.prototype = {
     </div>\
     </div>\
     </div>");
-    $el.find(".editExercise").one("click", function(){
+    $el.find(".editExercise").on("click", function(){
       console.log("Edit Exercise button clicked");
       self.renderEditForm();
+      $("form").show();
     });
     self.$el = $el;
     return $el;
@@ -39,7 +40,8 @@ ExerciseView.prototype = {
     // self is THIS exercise view that was clicked on
     console.log("Edit form function called");
     $(self).html(self.exerciseEditTemplate());
-    self.$el.find(".updateExercise").on("click", function(){
+    self.$el.find(".updateExercise").on("click", function(evt){
+      evt.preventDefault();
       self.updateExercise();
       console.log("update test");
     });
@@ -91,5 +93,6 @@ ExerciseView.prototype = {
     };
     this.exercise.update(data).then(function() { self.render();
     });
+    $("form").hide();
   }
 };
