@@ -61,5 +61,27 @@
   <!-- Individual workouts get generated in the div below -->
     <div class="workouts container"></div>
 
-  </body> 
+    <h4 id="work-outside" class="text-center">Do you want to do your workout <span>outside</span>?</h4>
+
+    <div class="weather-pic">
+      <img src="http://images.clipartpanda.com/weather-clipart-weather-clip-art-15.jpg" id="weather-img">
+    </div>
+
+    <p id="weather">Input your city and state below in order to get up-to-date weather information for your area!</p>
+
+    <form class="form-inline text-center" id="weather">
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" placeholder="Maryland">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="Silver Spring">
+      </div>
+      <button type="submit" class="btn btn-default" id="check-weather">Check weather</button>
+    </form>
+
+    <div id="weather"></div> 
+
+  </body>
   </html>
