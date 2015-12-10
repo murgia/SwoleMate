@@ -48,6 +48,9 @@ ExerciseView.prototype = {
       self.updateExercise();
       console.log("update test");
     });
+      // self.exercise.destroy().then(function(){
+      //   self.$el.fadeOut();
+      // });
   },
 
   exerciseEditTemplate: function(){
@@ -97,5 +100,5 @@ ExerciseView.prototype = {
     this.exercise.update(data).then(function() { self.render();
     });
     $("form").hide();
-  }
+  },
 };
