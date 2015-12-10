@@ -27,10 +27,5 @@ Exercise.prototype = {
       this[attrtitle] = newData[attrtitle];
     }
   },
-  destroy: function(){
-    var url = "http://localhost:3000/exercies/" + this.id;
-    var request = $.ajax({url:  url, method: "delete"});
-    return request;
-  }
 
 }; // ends Exercise prototype
