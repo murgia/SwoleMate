@@ -8,21 +8,21 @@ var passport = require("passport");
 var usersController = require('../controllers/users');
 var staticsController = require('../controllers/statics');
 
-// router.route('/')
-//   .get(staticsController.home);
-//
-// router.route('/signup')
-//   .get(usersController.getSignup)
-//   .post(usersController.postSignup)
-//
-// router.post('/login', usersController.postLogin)
-//
+router.route('/')
+  .get(staticsController.home);
+
+router.route('/signup')
+  .get(usersController.getSignup)
+  .post(usersController.postSignup)
+
+router.post('/login', usersController.postLogin)
+
 router.route('/login')
   .get(usersController.getLogin)
   .post(usersController.postLogin)
 //
-// router.route("/logout")
-//   .get(usersController.getLogout)
+router.route("/logout")
+  .get(usersController.getLogout)
 
 
 module.exports = router

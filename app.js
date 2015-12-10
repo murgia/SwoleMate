@@ -11,6 +11,9 @@ var bodyParser   = require("body-parser");
 var session      = require('express-session');
 var router       = require('./config/routes')
 
+var mongodbUri = 'mongodb://localhost/swolemate';
+mongoose.connect(process.env.MONGOLAB_URI ||mongodbUri)
+
 app.use(morgan('dev'));
 app.use(cookieParser());
 
@@ -19,6 +22,9 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.set('view engine', 'hbs');
 app.set("views","./public/js/views");
 
+app.use(session({ secret: 'Swoll',
+                  resave: false,
+                  saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -49,6 +55,8 @@ app.use(function(req, res, next) {
 });
 
 require('./config/passport')(passport);
+var routes = require('./config/routes');
+app.use(routes);
 
 app.use("/", router)
 
