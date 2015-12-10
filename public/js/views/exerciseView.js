@@ -20,8 +20,8 @@ ExerciseView.prototype = {
     <p><strong>Video Url: </strong>" + this.exercise.video_url + "</p>\
     <embed width='100%' src='" + this.exercise.video_url + "'>\
     <div id='buttons_div'>\
-      <button class='btn btn-default editExercise'>Edit Exercise</button>\
-      <button class='btn btn-default deleteExercise'>Delete Exercise</button>\
+    <button class='btn btn-default editExercise'>Edit Exercise</button>\
+    <button class='btn btn-default deleteExercise'>Delete Exercise</button>\
     </div>\
     </div>\
     </div>");
@@ -36,7 +36,7 @@ ExerciseView.prototype = {
     // return $el;
   },
 
-    // <iframe max-width='100%' src='" + this.exercise.video_url + "'frameborder='0' allowfullscreen></iframe>\
+  // <iframe max-width='100%' src='" + this.exercise.video_url + "'frameborder='0' allowfullscreen></iframe>\
 
   renderEditForm: function(){
     var self = this;
@@ -48,9 +48,9 @@ ExerciseView.prototype = {
       self.updateExercise();
       console.log("update test");
     });
-      // self.exercise.destroy().then(function(){
-      //   self.$el.fadeOut();
-      // });
+    // self.exercise.destroy().then(function(){
+    //   self.$el.fadeOut();
+    // });
   },
 
   exerciseEditTemplate: function(){
@@ -62,29 +62,29 @@ ExerciseView.prototype = {
     self.$el.append($exerciseTemplateDiv);
 
     var $form =
-      $("<form style='margin-top: 10px;' role='form'>\
-      <div class='form-group'>\
-      <label for='exercise-name'>Exercise Name:</label>\
-      <input class='form-control' name='name' value='" + exercise.name + "'>\
-      </div>\
-      <div class='form-group'>\
-      <label for='exercise-description'>Exercise Description: </label>\
-      <textarea class='form-control' rows='5' name='description'>" + exercise.description + "</textarea>\
-      </div>\
-      <div class='form-group'>\
-      <label for='exercise-video_url'>Exercise Video Demo: </label>\
-      <input class='form-control' name='video_url' value='" + exercise.video_url + "'>\
-      </div>\
-      <div class='form-group'>\
-      <label for='sets'>Sets </label>\
-      <input class='form-control' name='sets' value='" + exercise.sets + "'>\
-      </div>\
-      <div class='form-group'>\
-      <label for='reps'>Reps: </label>\
-      <input class='form-control' name='reps' value='" + exercise.reps + "'>\
-      </div>\
-      <button type='submit' class='btn btn-default updateExercise'>Update Exercise</button>\
-      </form>");
+    $("<form style='margin-top: 10px;' role='form'>\
+    <div class='form-group'>\
+    <label for='exercise-name'>Exercise Name:</label>\
+    <input class='form-control' name='name' value='" + exercise.name + "'>\
+    </div>\
+    <div class='form-group'>\
+    <label for='exercise-description'>Exercise Description: </label>\
+    <textarea class='form-control' rows='5' name='description'>" + exercise.description + "</textarea>\
+    </div>\
+    <div class='form-group'>\
+    <label for='exercise-video_url'>Exercise Video Demo: </label>\
+    <input class='form-control' name='video_url' value='" + exercise.video_url + "'>\
+    </div>\
+    <div class='form-group'>\
+    <label for='sets'>Sets </label>\
+    <input class='form-control' name='sets' value='" + exercise.sets + "'>\
+    </div>\
+    <div class='form-group'>\
+    <label for='reps'>Reps: </label>\
+    <input class='form-control' name='reps' value='" + exercise.reps + "'>\
+    </div>\
+    <button type='submit' class='btn btn-default updateExercise'>Update Exercise</button>\
+    </form>");
 
     self.$el.find($exerciseTemplateDiv).html($form);
   },
