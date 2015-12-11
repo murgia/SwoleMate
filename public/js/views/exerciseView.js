@@ -3,30 +3,38 @@ var ExerciseView = function(exercise){
   this.$el = $("<div class=''></div>");
 };
 
-ExerciseView.setCreateButton = function(){
-  var self = this;
-  var newExercise = $(".newExercise");
-  var newExerciseForm = $(".workout-attachment");
-  newExercise.one("click", function(){
-    console.log("testing");
-    newExerciseForm.show();
-    self.prototype.exerciseNewTemplate();
-  });
-  newExercise.on("click", function(){
-    newExerciseForm.show();
-  });
-};
-
+// ExerciseView.setCreateButton = function(){
+//   var self = this;
+//   var newExercise = $(".newExercise");
+//   var newExerciseForm = $(".exercise-attachment");
+//   var exercisesId = $("#exercises");
+//   exercisesId.on("click", newExercise, function(){
+//     console.log("testing");
+//     newExerciseForm.show();
+//     self.prototype.exerciseNewTemplate();
+//   });
+//   newExercise.on("click", function(){
+//     newExerciseForm.show();
+//   });
+// };
+//
 ExerciseView.createExercise = function(){
-  var newExerciseBar = $(".newExercise");
-  var newExerciseForm = $(".workout-attachment");
-  newExerciseForm.on("click", ".newExercise", function(){
+  var newExerciseBar = $(".updateExercise");
+  var createExercise = $(".workout-attachment");
+  createExercise.on("click", ".updateExercise", function(evt){
+    evt.preventDefault();
     var data = {
-
+      name: $('input[name=name]').val(),
+      description: $('input[name=description]').val(),
+      video_url: $('input[name=video_url]').val(),
+      sets: $('input[name=sets]').val(),
+      reps: $('input[name=reps]').val()
     };
+    console.log("new test");
     Exercise.create(data).then(function(newExercise){
+      console.log(newExercise);
       new ExerciseView(newExercise).render();
-      newExerciseForm.hide();
+      // createExercise.hide();
     });
   });
 };
@@ -54,13 +62,12 @@ ExerciseView.prototype = {
     </div>\
     </div>");
     $el.find(".editExercise").on("click", function(){
-      console.log("Edit Exercise button clicked");
       self.renderEditForm();
       $("form").show();
     });
-    console.log("before", self.$el);
+    // console.log("before", self.$el);
     self.$el = $el;
-    console.log("after", self.$el);
+    // console.log("after", self.$el);
     // return $el;
   },
 
@@ -82,8 +89,7 @@ ExerciseView.prototype = {
   },
 
   exerciseEditTemplate: function(){
-    self = this;
-    console.log("exerciseEditTemplate rendered");
+    var self = this;
     var exercise = self.exercise;
     var $exerciseTemplateDiv =
     $("<div class='exerciseTemplateDiv'></div>");
@@ -118,31 +124,33 @@ ExerciseView.prototype = {
   },
 
   exerciseNewTemplate: function(){
-    var html = $(".workout-attachment");
+    var html = $(".exercise-attachment");
     var $form =
     $("<form style='margin-top: 10px;' role='form'>\
     <div class='form-group'>\
     <label for='exercise-name'>Exercise Name:</label>\
-    <input class='form-control' name='name' value='" + exercise.name + "'>\
+    <input class='form-control' name='name' value=''>\
     </div>\
     <div class='form-group'>\
     <label for='exercise-description'>Exercise Description: </label>\
-    <textarea class='form-control' rows='5' name='description'>" + exercise.description + "</textarea>\
+    <textarea class='form-control' rows='5' name='description'></textarea>\
     </div>\
     <div class='form-group'>\
     <label for='exercise-video_url'>Exercise Video Demo: </label>\
-    <input class='form-control' name='video_url' value='" + exercise.video_url + "'>\
+    <input class='form-control' name='video_url' value=''>\
     </div>\
     <div class='form-group'>\
     <label for='sets'>Sets </label>\
-    <input class='form-control' name='sets' value='" + exercise.sets + "'>\
+    <input class='form-control' name='sets' value=''>\
     </div>\
     <div class='form-group'>\
     <label for='reps'>Reps: </label>\
-    <input class='form-control' name='reps' value='" + exercise.reps + "'>\
+    <input class='form-control' name='reps' value=''>\
     </div>\
     <button type='submit' class='btn btn-default updateExercise'>Update Exercise</button>\
     </form>");
+    html.append($form);
+    console.log("testing");
     return(html);
   },
 

@@ -10,20 +10,12 @@ WorkoutView.setCreateButton = function(){
   var newWorkout = $("#new-workout");
   var newWorkoutForm = $(".workout-attachment");
   newWorkout.one("click", function(){
-    // renderNewWorkout();
-    console.log("testing");
     newWorkoutForm.show();
     self.prototype.workoutNewTemplate();
   });
   newWorkout.on("click", function(){
     newWorkoutForm.show();
-    console.log("test");
   });
-  // newWorkout.toggle(function(){
-  //   newWorkoutForm.show();
-  // }, function(){
-  //   newWorkoutForm.hide();
-  // });
 };
 
 WorkoutView.createWorkout = function(){
@@ -48,8 +40,14 @@ WorkoutView.prototype = {
     self.$el.html(self.workoutTemplate(self.workout));
     var showButton = self.$el.find(".showExercises");
     var editButton = self.$el.find(".editWorkout");
+    var addExerciseButton = self.$el.find(".newExercise");
     var exercisesDiv   = self.$el.find("div.exercises");
     exercisesDiv.hide();
+
+    addExerciseButton.on("click", function(){
+      console.log("new test");
+      self.exerciseNewTemplate();
+    });
 
     showButton.on("click", function(){
       self.toggleExercises(exercisesDiv);
@@ -133,6 +131,50 @@ WorkoutView.prototype = {
     html.append("<button class= 'updateWorkout'>Modify Workout<button>");
     html.append("<button class='deleteWorkout'>Obliterate Workout<button>");
     return(html);
-  }
+  },
+
+  exerciseNewTemplate: function(){
+    var html = $(".workout-attachment");
+    var $form =
+    $("<form style='margin-top: 10px;' role='form'>\
+    <div class='form-group'>\
+    <label for='exercise-name'>Exercise Name:</label>\
+    <input class='form-control' name='name' value=''>\
+    </div>\
+    <div class='form-group'>\
+    <label for='exercise-description'>Exercise Description: </label>\
+    <textarea class='form-control' rows='5' name='description'></textarea>\
+    </div>\
+    <div class='form-group'>\
+    <label for='exercise-video_url'>Exercise Video Demo: </label>\
+    <input class='form-control' name='video_url' value=''>\
+    </div>\
+    <div class='form-group'>\
+    <label for='sets'>Sets </label>\
+    <input class='form-control' name='sets' value=''>\
+    </div>\
+    <div class='form-group'>\
+    <label for='reps'>Reps: </label>\
+    <input class='form-control' name='reps' value=''>\
+    </div>\
+    <button type='submit' class='btn btn-default addExercise'>Add Exercise</button>\
+    </form>");
+    html.append($form);
+    console.log("testing");
+    return(html);
+  },
+
+  updateExercise: function() {
+    var data = {
+      name: $('input[name=name]').val(),
+      description: $('input[name=description]').val(),
+      video_url: $('input[name=video_url]').val(),
+      sets: $('input[name=sets]').val(),
+      reps: $('input[name=reps]').val()
+    };
+    this.exercise.update(data).then(function() { self.render();
+    });
+    $("form").hide();
+  },
 
 };
