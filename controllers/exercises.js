@@ -21,13 +21,19 @@ router.patch("/:id", function(req, res){
 });
 
 router.delete("/:id", function(req, res){
-  Workout.findByIdAndRemove(req.params.id).then(function(){
+  Exercise.findByIdAndRemove(req.params.id).then(function(){
     res.json({success: true});
+
+    console.log("delete test");
   });
 }); // ends router.get
 
 router.post("/", function(req, res) {
   Exercise.create(req.body).then(function(exercise){
+    Workout.find(exercise.workout).then(function(workout) {
+      workout.exercises.push(exercise);
+      workout.save();
+    });
     res.json(exercise);
   });
 });

@@ -40,11 +40,21 @@ nav {
 }
 
 /*************************************
-MAIN IMAGE
+IMAGES
 **************************************/
 img {
   width: 100%;
   height: auto;
+}
+
+img#weather-img{
+  width: 15%;
+}
+
+div.weather-pic{
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 /*************************************
@@ -65,28 +75,35 @@ a, a:hover, a:visited, a:active {
     font-weight: 900;
 }
 
-button.showExercises {
+button.showExercises,
+button.newExercise,
+button.editWorkout {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  background-color: #46DCF5;
   box-shadow: 0 0 3px gray;
   border: 2px solid #f5f5f5;
   text-align:center;
+}
+
+button.showExercises {
+  background-color: #46DCF5;
 }
 
 button.showExercises:hover {
   background-color: rgb(121, 232, 250);
 }
 
+button.newExercise {
+  background-color: #EDBF3C;
+}
+
+button.newExercise:hover {
+  background-color: #F6D26B;
+}
+
 button.editWorkout {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
   background-color: #AAF765;
-  box-shadow: 0 0 3px gray;
-  border: 2px solid #f5f5f5;
-  text-align:center;
 }
 
 button.editWorkout:hover {
@@ -103,6 +120,11 @@ div#buttons_div {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+button.editExercise,
+button.deleteExercise {
+  display: inline;
 }
 
 /* prevents text decoration from being underline when the mouse is clicked and away */
@@ -135,6 +157,7 @@ h1#new-workout:hover {
 h2.workout-title {
   font-size: 5.0vw;
   font-weight: 900;
+  margin-top: 1em;
 }
 
 h3.exercise-name {
@@ -144,6 +167,7 @@ h3.exercise-name {
   color: #972102;
 }
 
+/* paragraph below is for the exercise view */
 p {
   font-size: small;
 }
@@ -152,9 +176,15 @@ h3.exercise-name {
   display: inline;
 }
 
-button.editExercise,
-button.deleteExercise {
-  display: inline;
+p#weather {
+  width: 75%;
+  margin: 0 auto;
+  font-size: 2.0vw;
+}
+
+span {
+  color: blue;
+  font-style: italic;
 }
 
 /*************************************
@@ -173,4 +203,24 @@ EXERCISE DIV
 
 h3.exercise_name_title {
   font-weight: 700;
+}
+
+h4#work-outside {
+  width: 75%;
+  font-size: 2.5vw;
+  margin: 1em auto;
+}
+
+/* the h5 below is for the temperature return info */
+h5 {
+  display: inline-block;
+  font-size: 1em;
+}
+
+/*************************************
+FORMS
+**************************************/
+
+form#weather {
+  margin: 2em;
 }
