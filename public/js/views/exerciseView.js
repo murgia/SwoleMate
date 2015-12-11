@@ -19,9 +19,9 @@ var ExerciseView = function(exercise){
 // };
 //
 ExerciseView.createExercise = function(){
-  var newExerciseBar = $(".updateExercise");
+  var newExerciseBar = $(".addExercise");
   var createExercise = $(".workout-attachment");
-  createExercise.on("click", ".updateExercise", function(evt){
+  createExercise.on("click", ".addExercise", function(evt){
     evt.preventDefault();
     var data = {
       name: $('input[name=name]').val(),
