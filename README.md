@@ -2,7 +2,7 @@
 
 The SwoleMate app gives you a collection of different types of effective workouts, their corresponding exercises, and even video demos to help you get it right!
 
-###Deployed app link: http://www.heroku.com
+###Deployed app link: http://powerful-journey-2894.herokuapp.com/
 
 ##Installation Instructions
 * Git fork and clone
