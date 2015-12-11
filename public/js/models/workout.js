@@ -4,7 +4,7 @@ var Workout = function(info) {
 };
 Workout.all = [];
 Workout.fetch = function() {
-  var url = "http://localhost:3000/workouts";
+  var url = "/workouts";
   var request = $.getJSON(url).then(function(response) {
     for (var i = 0; i < response.length; i++) {
       Workout.all.push(new Workout(response[i]));
@@ -33,7 +33,7 @@ Workout.create = function(workoutData){
 Workout.prototype = {
   fetchExercises: function() {
       var workout = this;
-      var url = "http://localhost:3000/workouts/" + workout.id + "/exercises";
+      var url = "/workouts/" + workout.id + "/exercises";
       workout.exercises = [];
       var request = $.getJSON(url).then(function(response) {
         for (var i = 0; i < response.length; i++) {
@@ -47,7 +47,7 @@ Workout.prototype = {
 
     update: function(workoutData) {
       var self = this;
-      var url = "http://localhost:3000/workouts/" + self.id;
+      var url = "/workouts/" + self.id;
       var request = $.ajax({
         url: url,
         method: "patch",
@@ -59,12 +59,12 @@ Workout.prototype = {
       return request;
     },
     destroy: function() {
-      var url = "http://localhost:3000/workouts/" + this.id;
+      var url = "/workouts/" + this.id;
       var request = $.ajax( {url: url, method: "delete"} );
       return request;
     },
     create: function(){
-      var url = "http://localhost:3000/workouts/";
+      var url = "/workouts/";
       var request = $.ajax({
           url: url,
           method: "POST",
