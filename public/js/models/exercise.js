@@ -10,7 +10,7 @@ var Exercise = function(info){
 
 Exercise.all = [];
 Exercise.fetch = function() {
-  var url = "http://localhost:3000/exercise";
+  var url = "/exercise";
   var request = $.getJSON(url).then(function(response) {
     for (var i = 0; i < response.length; i++) {
       Exercise.all.push(new Exercise(response[i]));
@@ -39,7 +39,7 @@ Exercise.create = function(exerciseData){
 Exercise.prototype = {
   update: function(exerciseData) {
     var self = this;
-    var url = "http://localhost:3000/exercises/" + self.id;
+    var url = "/exercises/" + self.id;
     var request = $.ajax({
       url: url,
       method: "patch",
@@ -51,12 +51,12 @@ Exercise.prototype = {
     return request;
   },
   destroy: function() {
-    var url = "http://localhost:3000/exercises/" + this.id;
+    var url = "/exercises/" + this.id;
     var request = $.ajax( {url: url, method: "delete"} );
     return request;
   },
   create: function(){
-    var url = "http://localhost:3000/exercises/";
+    var url = "/exercises/";
     var request = $.ajax({
       url: url,
       method: "POST",

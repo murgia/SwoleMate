@@ -1,8 +1,9 @@
 require("./schema");
 var mongoose = require("mongoose");
-var db = mongoose.connection;
+var db = mongoose.connection
 var workoutData = require("./workout_data");
 var exerciseData = require("./exercise_data");
+
 db.on("error", function(err){
   console.log("Oops! Mongo threw an error. Is `mongod` running?");
   console.log(err.message);

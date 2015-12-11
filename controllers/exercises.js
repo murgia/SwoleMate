@@ -33,7 +33,7 @@ router.post("/", function(req, res) {
     Workout.find(exercise.workout).then(function(workout) {
       workout.exercises.push(exercise);
       workout.save();
-    })
+    });
     res.json(exercise);
   });
 });

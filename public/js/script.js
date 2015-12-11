@@ -8,6 +8,8 @@ $(document).ready(function(){
   });
   WorkoutView.createWorkout();
   WorkoutView.setCreateButton();
+  // ExerciseView.setCreateButton();
+  // ExerciseView.createExercise();
 
   $("button#check-weather").on("click", function(evt){
     evt.preventDefault();

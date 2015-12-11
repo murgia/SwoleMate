@@ -19,11 +19,13 @@ The SwoleMate app gives you a collection of different types of effective workout
 * HBS 4.0.0
 * CSS Bootstrap
 
-##Future Enhancements
-*
-*
-* 
-*
+##Future Enhancements/Issues
+* Add create exercise functionality
+* Make update exercise feature work with auto reload capability instead of page refresh
+* Add a list of exercises from a 3rd party API
+* Use a mapping application so users can search for local gyms
+* Use user authorization to create workouts and exercises for individual users
+* Add 3rd party authorizations such as twitter and facebook
 
 ##User Stories
 As a user, I should be able to...
