@@ -1,6 +1,6 @@
 require("./schema");
 var mongoose = require("mongoose");
-var db = mongoose.connection;
+var db = mongoose.connect(process.env.MONGOLAB_URI ||mongodbUri);
 var workoutData = require("./workout_data");
 var exerciseData = require("./exercise_data");
 db.on("error", function(err){

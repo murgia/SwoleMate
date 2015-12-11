@@ -10,7 +10,7 @@ var Exercise = function(info){
 
 Exercise.all = [];
 Exercise.fetch = function() {
-  var url = "http://localhost:3000/exercise";
+  var url = "/exercise";
   var request = $.getJSON(url).then(function(response) {
     for (var i = 0; i < response.length; i++) {
       Exercise.all.push(new Exercise(response[i]));
