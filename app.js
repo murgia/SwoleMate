@@ -12,8 +12,8 @@ var bodyParser   = require("body-parser");
 var session      = require('express-session');
 var router       = require('./config/routes');
 
-// var mongodbUri = 'mongodb://localhost/swolemate';
-// mongoose.connect(process.env.MONGOLAB_URI ||mongodbUri);
+var mongodbUri = 'mongodb://localhost/Swolemate2';
+mongoose.connect(process.env.MONGOLAB_URI ||mongodbUri);
 
 require('./db/schema');
 
@@ -61,6 +61,7 @@ app.use(routes);
 
 app.use("/", router);
 
-app.listen(3000, function() {
-  console.log("Listening on port 3000");
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+console.log("Listening on " + port);
 });
