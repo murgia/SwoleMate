@@ -1,6 +1,6 @@
 var ExerciseView = function(exercise){
   this.exercise = exercise;
-  this.$el = $("<div class=''></div>");
+  // this.$el = $("<div class=''></div>");
 };
 
 // ExerciseView.setCreateButton = function(){
@@ -18,6 +18,7 @@ var ExerciseView = function(exercise){
 //   });
 // };
 //
+
 ExerciseView.createExercise = function(){
   var newExerciseBar = $(".addExercise");
   var createExercise = $(".workout-attachment");

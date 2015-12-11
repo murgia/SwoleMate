@@ -3,6 +3,7 @@ $(document).ready(function(){
     Workout.all.forEach(function(workout){
       var view = new WorkoutView(workout);
       view.render();
+      ExerciseView.setCreateButton();
     });
   });
   WorkoutView.createWorkout();
