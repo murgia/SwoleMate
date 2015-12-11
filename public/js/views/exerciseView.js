@@ -1,20 +1,27 @@
 var ExerciseView = function(exercise){
   this.exercise = exercise;
-  this.$el = $("<div class=''></div>");
+  // this.$el = $("<div class=''></div>");
 };
 
 ExerciseView.setCreateButton = function(){
   var self = this;
-  var newExercise = $(".newExercise");
-  var newExerciseForm = $(".workout-attachment");
-  newExercise.one("click", function(){
-    console.log("testing");
-    newExerciseForm.show();
-    self.prototype.exerciseNewTemplate();
-  });
-  newExercise.on("click", function(){
-    newExerciseForm.show();
-  });
+  var exerciseButtonsArray = $("body").find($("button.newExercise"));
+
+  $(exerciseButtonsArray).on("click", function() {
+    console.log("clicked");
+  }); 
+
+  // console.log($("div.workouts").children());
+  // var newExerciseButton = $("button.newExercise");
+  // var newExerciseForm = $("div.workout-attachment");
+  // newExerciseButton.on("click", function(){
+  //   console.log("testing");
+  //   // newExerciseForm.show();
+  //   // self.prototype.exerciseNewTemplate();
+  // });
+  // newExercise.on("click", function(){
+  //   newExerciseForm.show();
+  // });
 };
 
 ExerciseView.createExercise = function(){
