@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-// mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/Swolemate2");
+// mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/Swolemate2"); // jsm: try to add a conditional which checks the environment
 var mongodbUri = 'mongodb://localhost/Swolemate2';
 // mongoose.connect(process.env.MONGOLAB_URI ||mongodbUri);
 var Schema = mongoose.Schema;
@@ -24,7 +24,7 @@ var ExerciseSchema = new Schema({
   name: String,
   description: String,
   video_url: String,
-  workout:{type: ObjectId, ref: "Workout"},
+  workout:{type: ObjectId, ref: "Workout"},  // jsm: to add the ability to use an exercise in multiple workouts, just need to make this an array of workout references
   sets: Number,
   reps: Number
 });

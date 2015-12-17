@@ -70,3 +70,5 @@ Exercise.prototype = {
       }
     }
   };
+
+// jsm: Great job with front-end structure! Any insights since starting into Angular?

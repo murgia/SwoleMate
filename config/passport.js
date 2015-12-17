@@ -46,7 +46,7 @@ module.exports = function(passport) {
     passwordField: 'password',
     passReqToCallback: true
   }, function(req, email, password, callback) {
-    //Sea
+    //Sea //jsm: <- ? probably used to say search for user -- make sure comments are clean
     User.findOne({
       'local.email': email
     }, function(err, user) {

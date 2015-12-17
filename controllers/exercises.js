@@ -3,7 +3,7 @@ var router = express.Router();
 var Workout = require("../models/workout");
 var Exercise = require("../models/exercise");
 
-function error(response, message){
+function error(response, message){ // jsm: use this function in code below! Just chilling here at the moment
   response.status(500);
   response.json({error: message});
 }
@@ -26,7 +26,7 @@ router.delete("/:id", function(req, res){
 
     console.log("delete test");
   });
-}); // ends router.get
+});
 
 router.post("/", function(req, res) {
   Exercise.create(req.body).then(function(exercise){
@@ -34,7 +34,7 @@ router.post("/", function(req, res) {
       workout.exercises.push(exercise);
       workout.save();
     });
-    res.json(exercise);
+    res.json(exercise); // jsm : this is going to return before the workout saves
   });
 });
 

@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(morgan("dev"));
 
-// create routes
+// create routes // jsm: these can go in the router as well
 app.get("/", function(req, res) {
   console.log("what up");
   res.render("index.hbs");
@@ -65,3 +65,5 @@ app.listen(process.env.PORT || 3000, function() {
 
   console.log("Listening on port 3000");
 });
+
+// jsm: There are a lot of -- I'm pretty sure -- unused files in the server directory. Make sure to remove unused files
