@@ -50,3 +50,5 @@ module.exports = {
   postSignup: postSignup,
   getLogout: getLogout
 }
+
+// jsm: very nice! The comments on the functions are great

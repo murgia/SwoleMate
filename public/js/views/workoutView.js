@@ -2,7 +2,7 @@ var WorkoutView = function(workout){
   this.workout = workout;
   this.$el = $("<div class='workout'></div>");
   this.render();
-  $(".workouts").append(this.$el);
+  $(".workouts").append(this.$el); // jsm: if this is happening in the initialize, then the view won't be appended on updates
 };
 
 WorkoutView.setCreateButton = function(){

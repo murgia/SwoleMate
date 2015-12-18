@@ -40,3 +40,5 @@ router.delete("/:id", function(req, res){
 
 // router.create("/:id/workouts")
 module.exports = router;
+
+// jsm: solid!

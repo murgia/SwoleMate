@@ -15,3 +15,5 @@ describe("a workout", function(){
 
   });
 });
+
+// jsm: can get rid of these tests or flush out some examples

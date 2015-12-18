@@ -168,3 +168,5 @@ ExerciseView.prototype = {
     $("form").hide();
   },
 };
+
+// jsm: clear out commented code for legibility. Handlebars will make your templating a lot easier, and you can do so without many changes to what you already have 

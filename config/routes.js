@@ -20,9 +20,11 @@ router.post('/login', usersController.postLogin)
 router.route('/login')
   .get(usersController.getLogin)
   .post(usersController.postLogin)
-//
+
 router.route("/logout")
   .get(usersController.getLogout)
 
 
 module.exports = router
+
+// jsm: looks good! You can move your routes for exercises and workouts here too
